@@ -1,0 +1,39 @@
+/* .btn-lateral{
+    background-color: white;
+}
+.btn-lateral :active{
+    background-color: white;
+}
+.btn-lateral :hover{
+    background-color: white;
+    width: 100%;
+    border-radius: 15px 0px 0px 15px;
+} */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: white !important;
+    border-radius: 15px 0px 0px 15px;
+    padding: 2% 2%;
+}
+.bord{
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 3px;
+}
+.lista{
+    font-size: 15px;
+    font-weight: bold;
+}
+.bg-title{
+    background-color: #2B7784;
+    color:white;
+    font-weight: bold;
+    padding: 2% 2%;
+    font-size: 16px;
+    border-radius: 15px;
+}
+.fondo-1{
+    background-image: url(../../assets/image/fondos/fondo-1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+}

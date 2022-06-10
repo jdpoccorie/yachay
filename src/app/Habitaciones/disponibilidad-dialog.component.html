@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ 'motor.checkavai' | translate }}</h1>
+<div style="overflow: hidden;" mat-dialog-content>
+  
+  <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="showLoadingSpinner == true"></mat-spinner>
+
+  <div class="alert alert-danger" role="alert" *ngIf="showLoadingSpinner == false && isOk == false">
+    <span *ngIf="isOk == false">{{ 'motor.checkavaierr' | translate }}</span>
+  </div>
+
+</div>
+<div mat-dialog-actions *ngIf="showLoadingSpinner == false">
+  <button class="btn btn-danger btn-lg" *ngIf="isOk == false" mat-button mat-dialog-close>{{ 'motor.goback' | translate }}</button>
+</div>

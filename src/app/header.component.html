@@ -1,0 +1,56 @@
+<div class="container" style="padding-top: 10px;">
+ 
+    <form class="form-inline hotel_booking_table" #form="ngForm" (ngSubmit)="consultaFechas(form)">
+  
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3">
+            <mat-form-field *ngIf="selectorHotel == 8" appearance="outline" style="display: flow-root;">
+              <mat-label>Hotel</mat-label>
+              <mat-select [(ngModel)]="filtro.nroPersonas" name="nroPersonas" >
+                <mat-option value="1" >Inti Punku Machu picchu</mat-option>
+                <mat-option value="2">Inti Punku Alameda Inn</mat-option>               
+              </mat-select>
+            </mat-form-field>
+
+            <div *ngIf="selectorHotel == 0 || selectorHotel == 1">
+               <h3 class="small text-white mb-2 mt-0">Inti Punku</h3>
+               <h4 class="text-white letra" style="margin-top: -8%">Machu picchu</h4>
+            </div>
+
+            <div *ngIf="selectorHotel == 2">
+              <h3 class="small text-white mb-2 mt-0">Inti Punku</h3>
+              <h4 class="text-white letra" style="margin-top: -8%">Alameda Inn</h4>
+           </div>
+
+          </div>
+
+          <div class="col-md-3">
+  
+            <mat-form-field appearance="outline" style="display: unset;">
+              <mat-label style="font-weight: bold;" >{{ 'motor.checkin' | translate }}</mat-label>
+              <input matInput (dateInput)="actualizarFecha($event)" [min]="minStartDate" [max]="maxStartDate" [matDatepicker]="dp3" [(ngModel)]="filtro.startDate" disabled name="startDate" >
+              <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+              <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+          </div>
+          <div class="col-md-3">
+  
+            <mat-form-field appearance="outline" style="display: unset;">
+              <mat-label style="font-weight: bold;">{{ 'motor.checkout' | translate }}</mat-label>
+              <input matInput [min]="minEndDate" [max]="maxEndDate" [matDatepicker]="dp4" [(ngModel)]="filtro.endDate" disabled name="endDate" >
+              <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+              <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+            </mat-form-field>
+  
+          </div>
+  
+          <div class="col-md-3" *ngIf="selectorHotel == 0 || selectorHotel == 1">  
+            <button class="btn btn-warning" type="submit" style="margin-top: 10px;" >{{ 'motor.reservar' | translate }}</button>  
+          </div>
+        </div>      
+      </div>       
+    </form>  
+  </div>

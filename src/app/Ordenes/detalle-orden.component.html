@@ -1,0 +1,132 @@
+<header-pages></header-pages>
+
+<div class="container">
+    <article class="card">
+        <header class="card-header" style="background-color: rgba(0, 0, 0, 0.03);"> {{ 'motor.infoorden' | translate }} </header>
+        
+        <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="showLoadingSpinner == true"></mat-spinner>
+        
+        <div class="card-body" *ngIf="showLoadingSpinner == false">
+
+            <article class="card card-outline-secondary">
+                <header class="card-header" style="background-color: rgba(0, 0, 0, 0.03);"> {{ 'motor.detalleorden' | translate }} </header>
+
+                <div class="card-body">
+
+                    <div class="row">
+                        <h2 style="font-size: large;">{{ 'motor.codigoreserva' | translate }} {{respuestaServer.CodigoReserva}}</h2>
+                    </div>
+
+                    <div class="row">
+                        <article class="col-12 card card-outline-secondary">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4"> <strong>{{ 'motor.fechasolicitud' | translate }}</strong> <br> {{respuestaServer.FechaPago | date:'yyyy-MM-dd HH:mm' }} </div>
+                                    <div class="col-md-4"> <strong>{{ 'motor.montototal' | translate }}</strong> <br> {{respuestaServer.Moneda}} {{respuestaServer.MontoPagado}} </div>
+                                    <div class="col-md-4" > <strong>{{ 'motor.formapago' | translate }}</strong> <br> {{ 'motor.pagotarjeta' | translate }} </div>
+                                    <div class="col-md-4" > <strong>{{ 'motor.tipotarjeta' | translate }} </strong> <br> {{respuestaServer.TipoTarjeta}}  </div>
+                                    <div class="col-md-4" > <strong>{{ 'motor.nrotarjeta' | translate }} </strong> <br> {{respuestaServer.NroTarjeta}}  </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6"> 
+                                        <strong>{{ 'motor.checkin' | translate }}</strong> <br> <strong class="text-primary">{{respuestaServer.FechaCheckIn | date:'yyyy-MM-dd'}}</strong> 
+                                    </div>
+                                    <div class="col-md-6"> 
+                                        <strong>{{ 'motor.checkout' | translate }}</strong> <br> <strong class="text-primary">{{respuestaServer.FechaCheckOut | date:'yyyy-MM-dd'}}</strong> <br>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6"> 
+                                        <strong>{{ 'motor.estadopago' | translate }}</strong> <br> <strong class="text-danger">{{ 'motor.pagoconfirmado' | translate }}</strong> 
+                                    </div>
+                                    <div class="col-md-6"> 
+                                        <strong>{{ 'motor.estadopago' | translate }}</strong> <br> <strong class="text-success">{{ 'motor.pagorealizado' | translate }}</strong> <br>
+                                        <strong>{{ 'motor.idtransaccion' | translate }}</strong> <br> <strong class="text-success">{{respuestaServer.IdTransaccion}}</strong><br>
+                                        <strong>{{ 'motor.codreferencia' | translate }}</strong> <br> <strong class="text-success">{{respuestaServer.CodigoRef}}</strong>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+                        <p></p>
+                    </div>
+
+                    <div class="row table-responsive" style="margin-top: 20px; margin-left: 5px;">
+                            <div class="row card mb-3" *ngFor="let item of listaHabitacionesSeleccionadas" style="margin-right: 5px;">
+                              <div class="row no-gutters">
+                                <div class="col-md-4">
+                                  <img [src]="'data:image/jpg;base64,' + item.Base64ImageBanner1" alt="First slide" style="width: 250px; height: 160px;" class="img-fluid" >
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body">
+                                    <h4 class="card-title">{{item.TipoHabitacion}}</h4>
+                                    <p class="card-text">{{item.Observaciones}}</p>
+                                    <p class="card-text">{{ 'motor.noches' | translate }} : {{item.nroNoches}}</p>
+                                    <p class="card-text"><small class="text-muted">{{ 'motor.preciohab' | translate }} : {{moneda | monedaFormato}} {{item.PrecioSubTotal}}</small></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </article>
+            <hr>
+
+            <article class="card card-outline-secondary">
+                <header class="card-header" style="background-color: rgba(0, 0, 0, 0.03);"> {{ 'motor.datoscontacto' | translate }} </header>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4"> <strong>{{ 'motor.nombres' | translate }}:</strong> <br>{{checkOutModel.nombres}} </div>
+                        <div class="col-md-4"> <strong>{{ 'motor.apellidos' | translate }}:</strong> <br> {{checkOutModel.apellidos}} </div>
+                        <div class="col-md-4"> <strong>{{ 'motor.telefonocont' | translate }}:</strong> <br> {{checkOutModel.telefonoContacto}} </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"> <strong>{{ 'motor.pais' | translate }}:</strong> <br>{{checkOutModel.pais}} </div>
+                        <div class="col-md-4"> <strong>{{ 'motor.ciudad' | translate }}:</strong> <br> {{checkOutModel.ciudad}} </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"> <strong>{{ 'motor.direccion' | translate }}:</strong> <br>{{checkOutModel.direccionExacta}} </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"> <strong>{{ 'motor.email' | translate }}:</strong> <br>{{checkOutModel.correoElectronico}} </div>
+                    </div>
+                </div>
+            </article>
+
+            <hr>
+
+            <article class="card card-outline-secondary">
+                <div>
+                    <div class="comment-wrapper">
+                        <div class="card panel-info" *ngIf="showLoadingSpinnerEnviarMensaje == false">
+                            <div class="card-header">
+                                {{ 'motor.solicitudesadicionales' | translate }}
+                            </div>
+                            <div class="card-body">
+                                <textarea class="form-control" placeholder="escriba un comentario..." rows="3" [(ngModel)] = "newMessage"></textarea>
+                                <br>
+                                <button type="button" class="btn btn-info pull-right" (click)="enviarNuevoMensaje()">{{ 'motor.enviarmensaje' | translate }}</button>
+                                <div class="clearfix"></div>
+                                <hr>
+                            </div>
+                        </div>
+
+                        <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="showLoadingSpinnerEnviarMensaje == true"></mat-spinner>
+                    </div>
+
+                </div>
+            </article>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <a href="/" class="btn btn-success" data-abc="true"> <i class="fa fa-chevron-left"></i> {{ 'motor.volverordenes' | translate }} </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

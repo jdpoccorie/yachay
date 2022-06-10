@@ -1,0 +1,261 @@
+<header-pages></header-pages>
+
+<div class="container">
+    <div class="row" *ngIf="showConsultaFechas == true">
+        <app-header style="width: -webkit-fill-available;" (dataEvent)='procesarConsulta($event)'></app-header>
+    </div>
+  
+    <div class="row" >
+
+        <div class="col-md-8">
+
+          <div style="width: 100%;" *ngIf="showLoadingSpinner == true">
+            <div class="sk-fading-circle">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
+            </div>
+          </div>
+
+            <div class="container" *ngIf="showLoadingSpinner == false">
+                <div *ngFor="let item of listaHabitaciones" class="row" style="margin-top: 10px;">
+      
+                    <div class="card" style="width: -webkit-fill-available;">
+                      <div class="card-header" id="headingOne">
+                        <h3 style="margin-bottom: 0px;font-weight:600;color: rgba(0,0,0,.38); font-size: large;">{{item.TipoHabitacion}}</h3>
+                      </div>         
+                     
+                        <div class="card-body">
+                          
+                            <div class="container">
+                                <div class="row">
+        
+                                    <div class="col-md-5" style="padding-left: 0px;">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                              <li id="firstItemIndicator" data-target="#carouselExampleIndicators" (click)="itemClick($event, 0, item)" *ngIf="item.Base64ImageBanner1!='undefined' && item.Base64ImageBanner1" data-slide-to="0" class="active"></li>
+                                              <li id="secondItemIndicator" data-target="#carouselExampleIndicators" (click)="itemClick($event, 1, item)" *ngIf="item.Base64ImageBanner2!='undefined' && item.Base64ImageBanner2" data-slide-to="1"></li>
+                                              <li id="thridItemIndicator" data-target="#carouselExampleIndicators" (click)="itemClick($event, 2, item)" *ngIf="item.Base64ImageBanner3!='undefined' && item.Base64ImageBanner3" data-slide-to="2"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                              <div id="firstItem" class="carousel-item active" *ngIf="item.Base64ImageBanner1!='undefined' && item.Base64ImageBanner1">
+                                                <img class="d-block w-100" style="width: 250px; height: 160px;" [src]="'data:image/jpg;base64,' + item.Base64ImageBanner1" alt="First slide">
+                                              </div>
+                                              <div id="secondItem" class="carousel-item" *ngIf="item.Base64ImageBanner2!='undefined' && item.Base64ImageBanner2">
+                                                <img class="d-block w-100" style="width: 250px; height: 160px;" [src]="'data:image/jpg;base64,' + item.Base64ImageBanner2" alt="Second slide">
+                                              </div>
+                                              <div id="thridItem" class="carousel-item" *ngIf="item.Base64ImageBanner3!='undefined' && item.Base64ImageBanner3">
+                                                <img class="d-block w-100" style="width: 250px; height: 160px;" [src]="'data:image/jpg;base64,' + item.Base64ImageBanner3" alt="Third slide">
+                                              </div>
+                                            </div>
+                                            <a class="carousel-control-prev" role="button" (click)="imagePrev($event, item)" data-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">{{ 'motor.anterior' | translate }}</span>
+                                            </a>
+                                            <a class="carousel-control-next" role="button" (click)="imageNext($event, item)"  data-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="sr-only">{{ 'motor.siguiente' | translate }}</span>
+                                            </a>
+                                          </div>
+                                    </div>
+        
+                                    <div class="col-md-7">
+                                        
+                                        <p class="card-text">{{item.Observaciones}}</p>
+                                        <a href="#">{{ 'motor.masinfo' | translate }}</a>
+        
+                                        <br>
+                                        <br>
+                                        <i class="fas fa-wifi fa-lg"></i>
+                                        <i class="fas fa-phone fa-lg" style="margin-left: 10px;"></i>
+                                        <i class="fas fa-tv fa-lg" style="margin-left: 10px;"></i>
+                                        <i class="fas fa-bath fa-lg" style="margin-left: 10px;"></i>
+                                        <i class="fas fa-charging-station fa-lg" style="margin-left: 10px;"></i>
+                                        <i class="fas fa-car fa-lg" style="margin-left: 10px;"></i>
+                                        <i class="fas fa-toolbox fa-lg" style="margin-left: 10px;"></i>
+                                    </div>
+        
+                                </div>
+        
+                                <div *ngIf="item.PrecioXNoche > 0" class="row" style="margin-top: 10px;">        
+                                    <div  class="card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-7">
+                                                        <h4 class="card-title" style="font-size: medium; line-height: unset; font-weight: 500;">{{item.TipoHabitacion}} – {{ 'motor.precioreg' | translate }}</h4>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div>
+                                                            <div class="row">
+                                                                <i class="fas fa-male" style="margin-left: 15px;"></i>
+                                                                <small class="text-muted"  style="margin-left: 10px;">{{ 'motor.preciohab' | translate }}</small>
+                                                                <span  style="margin-left: 10px;">{{item.Moneda | monedaFormato}} {{item.PrecioXNoche}}</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-7">
+                                                                    <span style="font-size: x-small;">N° Hab :</span>
+                                                                    <select class="form-control" style="font-size: x-small; display: inline-block; width: 60px; margin-left: 5px;" id="exampleFormControlSelect1">
+                                                                        <option>1</option>
+                                                                     </select>
+                                                                </div>
+                                                                <div class="col-sm-5">
+                                                                    <button type="button" class="btn btn-primary" style="font-size: x-small;" (click)="SeleccionarHabitacionPrecio(item, null)">{{ 'motor.selectbtn' | translate }}</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                  
+                                        </div>
+                                      </div>
+
+                                </div>
+
+                                <div *ngIf="item.PrecioXNoche == 0" class="row" style="margin-top: 10px;">        
+                                  <div *ngFor="let precio of item.ListaPreciosVentaXNoche" class="card" style="width: 100%;margin-top: 10px;">
+                                      <div class="card-body">
+                                          <div class="container">
+                                              <div class="row">
+                                                  <div class="col-md-7">
+                                                      <h4 class="card-title" style="font-size: medium; line-height: unset; font-weight: 500;">{{item.TipoHabitacion}} – {{precio.Detalle}}</h4>
+                                                  </div>
+                                                  <div class="col-md-5">
+                                                      <div>
+                                                          <div class="row">
+                                                              <i class="fas fa-male" style="margin-left: 15px;"></i>
+                                                              <small class="text-muted"  style="margin-left: 10px;">{{ 'motor.preciohab' | translate }}</small>
+                                                              <span  style="margin-left: 10px;">{{item.Moneda | monedaFormato}} {{precio.Precio}}</span>
+                                                          </div>
+                                                          <div class="row">
+                                                              <div class="col-sm-7">
+                                                                  <span style="font-size: x-small;">N° Hab :</span>
+                                                                  <select class="form-control" style="font-size: x-small; display: inline-block; width: 60px; margin-left: 5px;" id="exampleFormControlSelect1">
+                                                                      <option>1</option>
+                                                                   </select>
+                                                              </div>
+                                                              <div class="col-sm-5">
+                                                                  <button type="button" class="btn btn-primary" style="font-size: x-small;" (click)="SeleccionarHabitacionPrecio(item, precio)">{{ 'motor.selectbtn' | translate }}</button>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>                                  
+                                      </div>
+                                    </div>
+
+                              </div>
+                            </div>
+        
+        
+                        </div>
+                    </div>          
+        
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+                      <!-- Heading -->
+          <h3 class="d-flex justify-content-between align-items-center mb-3" style="font-size: large;">
+            <span class="text-muted">{{ 'motor.resumenreserva' | translate }}</span>
+            <span class="badge badge-secondary badge-pill">{{listaHabitacionesSeleccionadas.length}}</span>
+          </h3>
+
+          <!-- Cart -->
+          <ul class="list-group mb-3 z-depth-1">
+            <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <h4 class="text-muted" style="font-weight: 500; margin-bottom: 5px;">{{ 'motor.checkin' | translate }}</h4>
+                        <h4 class="text-muted" style="font-weight: 500; margin-bottom: 5px;">{{fechaCheckIn | date:'yyyy-MM-dd'}}</h4>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <h4 class="text-muted" style="font-weight: 500; margin-bottom: 0px;">{{ 'motor.checkout' | translate }}</h4>
+                        <h4 class="text-muted" style="font-weight: 500; margin-bottom: 0px;">{{fechaCheckOut | date:'yyyy-MM-dd'}}</h4>
+                    </div>
+                </div>
+            </li>
+
+
+            <li *ngFor="let item of listaHabitacionesSeleccionadas" class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h5 class="my-0">{{item.TipoHabitacion}}</h5>
+                <small class="text-muted">{{ 'motor.precioreg1' | translate }} - {{item.Moneda | monedaFormato}} {{item.PrecioXNoche}}</small>      <br>
+                <small class="text-muted">{{item.Capacidad}} {{ 'motor.huespedes' | translate }} - {{numeroNoches}} {{ 'motor.noches' | translate }}</small>            
+              </div>
+              <div>
+                <h5 class="my-0" style="text-align: end;"><i class="far fa-trash-alt" style="font-size: medium;" (click)="eliminarItem(item)" ></i></h5>
+                <span class="text-muted">{{item.Moneda | monedaFormato}} {{item.PrecioSubTotal}}</span>
+              </div>              
+            </li>
+
+
+            <!--<li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h5 class="my-0">Promo code</h5>
+                <small>XBR258E</small>
+              </div>
+              <span class="text-success">- S/ 20</span>
+            </li>-->
+
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total ({{moneda}})</span>
+              <strong>{{moneda | monedaFormato}} {{ listaHabitacionesSeleccionadas | totalSeleccionHab:1}}</strong>
+            </li>
+          </ul>
+          <!-- Cart -->
+
+          <!-- Promo code -->
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
+              </div>
+            </div>
+          </form>
+          <!-- Promo code -->
+
+          <button class="btn btn-success btn-lg btn-block" type="button" style="margin-top: 10px; font-size: medium;" (click)="ProcederReserva()" >{{ 'motor.reservar' | translate }}</button>
+
+          <div class="card" style="width: 100%; margin-top: 10px; background-color: whitesmoke;">
+            <div class="card-body">
+              <h5 class="card-title">Hotel Suizo</h5>
+              <p class="card-text">Calle Qori Wakanki N° 209,
+                Urb Las Orquideas, Aguas Calientes
+                Machu Picchu Town</p>
+                <h6 class="card-subtitle mb-2 text-muted">Cusco - Peru</h6>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-light " style="background-color: #e3f2fd;" *ngIf="(listaHabitacionesSeleccionadas | totalHabitaciones) > 0">
+    <div class="container">
+      <div class="navbar-brand row" style="display: contents;">
+        <div class="col-md-6">
+          <i class="fas fa-shopping-cart" style="font-size: small;"></i> <small style="margin-left: 20px;">{{ 'motor.yourreservation' | translate }}</small> 
+          <small style="margin-left: 20px;">{{ listaHabitacionesSeleccionadas | totalHabitaciones}} habitación, {{ listaHabitacionesSeleccionadas | totalHuepedesHab}} {{ 'motor.huespedes' | translate }}, {{numeroNoches}} {{ 'motor.noches' | translate }}</small>
+        </div>
+      </div>
+
+      <form class="form-inline my-2 my-lg-0">
+        <h2 style="margin-bottom: 0px;">Total : {{moneda | monedaFormato}} {{ listaHabitacionesSeleccionadas | totalSeleccionHab:1}}</h2>
+        <button style="margin-left: 20px;" class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="ProcederReserva()">{{ 'motor.reservar' | translate }}</button>
+      </form>
+    </div>
+  </nav>

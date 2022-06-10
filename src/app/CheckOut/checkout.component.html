@@ -1,0 +1,407 @@
+<header-pages></header-pages>
+
+<div class="container" style="margin-top: 20px;">
+  
+  <div class="row" >
+
+    <div class="col-md-8">
+
+        <div class="container">
+
+          <div class="row card mb-3" *ngFor="let item of listaHabitacionesSeleccionadas" style="max-width: 740px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img [src]="'data:image/jpg;base64,' + item.Base64ImageBanner1" alt="First slide" style="width: 250px; height: 160px;" class="img-fluid" >
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">{{item.TipoHabitacion}}</h4>
+                  <p class="card-text">{{item.Observaciones}}</p>
+                  <p class="card-text">{{ 'motor.noches' | translate }} : {{item.nroNoches}}</p>
+                  <p class="card-text"><small class="text-muted">{{ 'motor.preciohab' | translate }} {{moneda | monedaFormato}} {{item.PrecioSubTotal}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0" style="font-size: large">
+                {{ 'motor.infocontacto' | translate }}
+              </h2>
+            </div>
+        
+            <div id="collapseOne" #collapseOne class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <form class="needs-validation" #form="ngForm" novalidate (ngSubmit)="processCheckOutDatosContacto(form)">
+
+                  <div class="order-md-1">
+                    <div class="row">
+                      <div class="bg-danger text-white p-2 mb-2" *ngIf="formSubmitted && form.invalid">
+                        {{ 'motor.infoconterrors' | translate }}
+                      </div>
+                    </div>
+            
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="state">{{ 'motor.tipodociden' | translate }}</label>
+                        <select class="custom-select d-block w-100" name="tipoDocIdentidad" #tipoDocIdentidad="ngModel" id="state"
+                          [(ngModel)]="checkOutModel.tipoDocIdentidad"
+                          [class.ng-dirty.ng-invalid]="(formSubmitted || tipoDocIdentidad.dirty) && tipoDocIdentidad.invalid" required>
+                          <option value="7">PASAPORTE</option>
+                          <option value="1">DNI</option>
+                          <option value="4">CARNET EXTRANGERIA</option>
+                        </select>
+                        <div>
+                          <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || tipoDocIdentidad.dirty) && tipoDocIdentidad.invalid">
+                            <li *ngIf="tipoDocIdentidad.errors.required">
+                              {{ 'motor.tipodocidenreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+            
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">{{ 'motor.numerodoc' | translate }}</label>
+                        <input type="text" name="nroDocIdentidad" #nroDocIdentidad="ngModel"
+                          [class.ng-dirty.ng-invalid]="(formSubmitted || nroDocIdentidad.dirty) && nroDocIdentidad.invalid" class="form-control"
+                          id="nroDocIdentidad" placeholder="Documento Identidad" value="" [(ngModel)]="checkOutModel.numeroDocIdentidad" required
+                          minlength="5">
+                        <div>
+                          <ul class="text-danger list-unstyled"
+                            *ngIf="(formSubmitted || nroDocIdentidad.dirty) && nroDocIdentidad.invalid">
+                            <li *ngIf="nroDocIdentidad.errors.required">
+                              {{ 'motor.numerodocreq' | translate }}
+                            </li>
+                            <li *ngIf="nroDocIdentidad.errors.minlength">
+                              {{ 'motor.numerodocdnireq' | translate }}
+                              {{nroDocIdentidad.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">{{ 'motor.nombres' | translate }}</label>
+                        <input type="text" name="nombres" #nombres="ngModel"
+                          [class.ng-dirty.ng-invalid]="(formSubmitted || nombres.dirty) && nombres.invalid" class="form-control"
+                          id="Nombres" placeholder="Nombres" value="" [(ngModel)]="checkOutModel.nombres" required minlength="3"
+                          pattern="^[A-Za-z\u00f1\u00d1 ]+$">
+                        <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || nombres.dirty) && nombres.invalid">
+                          <li *ngIf="nombres.errors.required">
+                            {{ 'motor.nombresreq' | translate }}
+                          </li>
+                          <li *ngIf="nombres.errors.pattern">
+                            {{ 'motor.nombressolocaracreq' | translate }}
+                          </li>
+                          <li *ngIf="nombres.errors.minlength">
+                            {{ 'motor.nombresminimoreq' | translate }}
+                            {{nombres.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                          </li>
+                        </ul>
+                      </div>
+            
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">{{ 'motor.apellidos' | translate }}</label>
+                        <input type="text" name="apellidos" #apellidos="ngModel"
+                          [class.ng-dirty.ng-invalid]="(formSubmitted || apellidos.dirty) && apellidos.invalid" class="form-control"
+                          id="Apellidos" placeholder="Apellidos" value="" [(ngModel)]="checkOutModel.apellidos" required
+                          minlength="3" pattern="^[A-Za-z\u00f1\u00d1 ]+$">
+                        <div>
+                          <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || apellidos.dirty) && apellidos.invalid">
+                            <li *ngIf="apellidos.errors.required">
+                              {{ 'motor.apellidosreq' | translate }}
+                            </li>
+                            <li *ngIf="apellidos.errors.pattern">
+                              {{ 'motor.apellidossolocaracreq' | translate }}
+                            </li>
+                            <li *ngIf="apellidos.errors.minlength">
+                              {{ 'motor.apellidosminimoreq' | translate }}
+                              {{apellidos.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="username">{{ 'motor.telefonocont' | translate }}</label>
+                      <div class="input-group">
+                        <input type="text" name="telefonoContacto" style="width: unset;"
+                          [class.ng-dirty.ng-invalid]="(formSubmitted || telefonoContacto.dirty) && telefonoContacto.invalid"
+                          #telefonoContacto="ngModel" class="form-control" id="username" placeholder="Telefono Contacto"
+                          [(ngModel)]="checkOutModel.telefonoContacto" required minlength="6">
+                        <div style="width: 100%;">
+                          <ul class="text-danger list-unstyled"
+                            *ngIf="(formSubmitted || telefonoContacto.dirty) && telefonoContacto.invalid">
+                            <li *ngIf="telefonoContacto.errors.required">
+                              {{ 'motor.telefonocontreq' | translate }}
+                            </li>
+                            <li *ngIf="telefonoContacto.errors.minlength">
+                              {{ 'motor.telefonocontminimoreq' | translate }}
+                              {{telefonoContacto.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="email">{{ 'motor.email' | translate }}<span class="text-muted"></span></label>
+                      <input type="email" name="correoElectronico"
+                        [class.ng-dirty.ng-invalid]="(formSubmitted || correoElectronico.dirty) && correoElectronico.invalid"
+                        #correoElectronico="ngModel" class="form-control" id="email" placeholder="you@example.com"
+                        [(ngModel)]="checkOutModel.correoElectronico" required minlength="5" pattern="[\w.-]+@([\w-]+\.)+[\w-]+">
+                      <div>
+                        <ul class="text-danger list-unstyled"
+                          *ngIf="(formSubmitted || correoElectronico.dirty) && correoElectronico.invalid">
+                          <li *ngIf="correoElectronico.errors.required">
+                            {{ 'motor.emailreq' | translate }}
+                          </li>
+                          <li *ngIf="correoElectronico.errors.pattern">
+                            {{ 'motor.emailsolocaracreq' | translate }}
+                          </li>
+                          <li *ngIf="correoElectronico.errors.minlength">
+                            {{ 'motor.emailminimoreq' | translate }}
+                            {{correoElectronico.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="address">{{ 'motor.direccion' | translate }}</label>
+                      <input type="text" name="direccionExacta"
+                        [class.ng-dirty.ng-invalid]="(formSubmitted || direccionExacta.dirty) && direccionExacta.invalid"
+                        #direccionExacta="ngModel" class="form-control" id="address" placeholder="1234 Main St"
+                        [(ngModel)]="checkOutModel.direccionExacta" required minlength="5">
+                      <div>
+                        <ul class="text-danger list-unstyled"
+                          *ngIf="(formSubmitted || direccionExacta.dirty) && direccionExacta.invalid">
+                          <li *ngIf="direccionExacta.errors.required">
+                            {{ 'motor.direccionreq' | translate }}
+                          </li>
+                          <li *ngIf="direccionExacta.errors.minlength">
+                            {{ 'motor.direccionminimoreq' | translate }}
+                            {{direccionExacta.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                        
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="country">{{ 'motor.pais' | translate }}</label>
+                        <input type="text" name="pais" #pais="ngModel" class="form-control" id="pais" placeholder="Pais ..."
+                        [(ngModel)]="checkOutModel.pais" required>
+                        <div>
+                          <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || pais.dirty) && pais.invalid">
+                            <li *ngIf="pais.errors.required">
+                              {{ 'motor.paisreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label for="state">{{ 'motor.ciudad' | translate }}</label>
+                        <input type="text" name="ciudad" #ciudad="ngModel" class="form-control" id="ciudad" placeholder="Ciudad ..."
+                        [(ngModel)]="checkOutModel.ciudad" required>
+                        <div>
+                          <ul class="text-danger list-unstyled"
+                            *ngIf="(formSubmitted || ciudad.dirty) && ciudad.invalid">
+                            <li *ngIf="ciudad.errors.required">
+                              {{ 'motor.ciudadreq' | translate }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>   
+                    
+                    <div class="d-flex flex-row-reverse" >
+                      <button class="btn btn-primary btn-block" style="width: 150px;" type="submit" [disabled]="formSubmitted && form.invalid"
+                        [class.btn-secondary]="formSubmitted && form.invalid">{{ 'motor.continuar' | translate }}</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0" style="font-size: large">
+                {{ 'motor.completarreserva' | translate }}
+              </h2>
+            </div>
+            <div id="collapseTwo" #collapseTwo class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+
+                <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="showLoadingSpinner == true"></mat-spinner>
+
+                <form class="needs-validation" #formPago="ngForm" [style.visibility]="showLoadingSpinner ? 'hidden': 'visible'" novalidate (ngSubmit)="processCheckOutPago(formPago)">
+
+                  <span class="badge badge-danger" *ngIf="mostrarMensajeError" style="font-size: small;"> {{ mensajeError }} </span>
+
+
+                  <div class="form-group">
+                    <label for="cc-number" class="control-label mb-1">{{ 'motor.nrotarjeta' | translate }}</label>
+            
+                    <div class="input-group">
+
+                      <div id="txtNumeroTarjeta" class="input-control"></div>
+
+                      <!--<input type="text" name="numeroTarjeta" style="width: unset;"
+                        [class.ng-dirty.ng-invalid]="(formSubmittedTarjeta || numeroTarjeta.dirty) && numeroTarjeta.invalid"
+                        #numeroTarjeta="ngModel" class="form-control" id="cc-number" 
+                        [(ngModel)]="checkOutModel.numeroTarjeta" required minlength="16" pattern="^[0-9]*$">
+                      <div style="width: 100%;">
+                        <ul class="text-danger list-unstyled" *ngIf="(formSubmittedTarjeta || numeroTarjeta.dirty) && numeroTarjeta.invalid">
+                          <li *ngIf="numeroTarjeta.errors.required">
+                            {{ 'motor.nrotarjetareq' | translate }}
+                          </li>
+                          <li *ngIf="numeroTarjeta.errors.minlength">
+                            {{ 'motor.nrotarjetaminimoreq' | translate }}
+                            {{numeroTarjeta.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                          </li>
+                          <li *ngIf="numeroTarjeta.errors.pattern">
+                            {{ 'motor.nrotarjetasolonros' | translate }}
+                          </li>
+                        </ul>
+                      </div> -->
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="cc-exp" class="control-label mb-1">{{ 'motor.expiracion' | translate }}</label>
+                        
+                        <div id="txtFechaVencimiento" class="input-control"></div>
+
+                        <!--<input type="text" name="ccExp"
+                        [class.ng-dirty.ng-invalid]="(formSubmittedTarjeta || ccExp.dirty) && ccExp.invalid"
+                        #ccExp="ngModel" class="form-control" id="cc-exp" placeholder="MM / YYYY" 
+                        [(ngModel)]="checkOutModel.fechaExpTarjeta" required minlength="7" pattern="^(((0)[0-9])|((1)[0-2]))(\/)\d{4}$">
+                        
+                        <div style="width: 100%;">
+                          <ul class="text-danger list-unstyled" *ngIf="(formSubmittedTarjeta || ccExp.dirty) && ccExp.invalid">
+                            <li *ngIf="ccExp.errors.required">
+                              {{ 'motor.expiracionreq' | translate }}
+                            </li>
+                            <li *ngIf="ccExp.errors.minlength">
+                              {{ 'motor.expiracionminimoreq' | translate }}
+                              {{ccExp.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                            </li>
+                            <li *ngIf="ccExp.errors.pattern">
+                              {{ 'motor.expiracionpatron' | translate }}
+                            </li>
+                          </ul>
+                        </div> -->
+                      </div>
+                    </div>
+            
+                    <div class="col-6">       
+                      <div class="form-group">
+                        <label for="x_card_code" class="control-label mb-1">CVV</label>
+                        
+                        <div id="txtCvv" class="input-control"></div>
+                        <!--<input type="text" name="ccCVC"
+                        [class.ng-dirty.ng-invalid]="(formSubmittedTarjeta || ccCVC.dirty) && ccCVC.invalid"
+                        #ccCVC="ngModel" class="form-control" id="x_card_code"
+                        [(ngModel)]="checkOutModel.cvvTarjeta" required minlength="3" pattern="^[0-9]*$">
+                        
+                        <div style="width: 100%;">
+                          <ul class="text-danger list-unstyled" *ngIf="(formSubmittedTarjeta || ccCVC.dirty) && ccCVC.invalid">
+                            <li *ngIf="ccCVC.errors.required">
+                              {{ 'motor.codigocvvreq' | translate }}
+                            </li>
+                            <li *ngIf="ccCVC.errors.minlength">
+                              {{ 'motor.codigocvvdebecont' | translate }}
+                              {{ccCVC.errors.minlength.requiredLength}} {{ 'motor.numerodoccaracteresreq' | translate }}
+                            </li>
+                            <li *ngIf="ccCVC.errors.pattern">
+                              {{ 'motor.codigocvvpatron' | translate }}
+                            </li>
+                          </ul>
+                        </div>-->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <span>* {{ 'motor.terminos' | translate }}</span><br/>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-4">
+                      <button class="btn btn-primary btn-block" type="button" (click)="volverFormContacto()">{{ 'motor.volver' | translate }}</button>
+                    </div>
+                    <div class="col-8">
+                      <button id="payment-button" class="btn btn-lg btn-info btn-block" type="submit" [disabled]="formSubmittedTarjeta && formPago.invalid"
+                      [class.btn-secondary]="formSubmittedTarjeta && formPago.invalid" >
+                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                        <span id="payment-button-amount">{{ 'motor.pagar' | translate }}</span>
+                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                      </button>
+                    </div>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4" >
+
+      <!-- Cart -->
+      <ul #resumenOrden class="list-group mb-3 z-depth-1 sticky-top" style="top: 70px;">
+        <li class="list-group-item d-flex justify-content-between bg-light" style="padding-bottom: 0px;">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <p class="text-muted" style="font-weight: 500;">{{ 'motor.checkin' | translate }}</p>
+                    <p class="text-muted" style="font-weight: 500;">{{checkOutModel.startDate | date:'dd/MM/yyyy'}}</p>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <p class="text-muted" style="font-weight: 500;">{{ 'motor.checkout' | translate }}</p>
+                    <p class="text-muted" style="font-weight: 500;">{{ checkOutModel.endDate | date:'dd/MM/yyyy'}}</p>
+                </div>
+                <div class="row d-flex justify-content-between">
+                  <p class="text-muted" style="font-weight: 500;">{{ 'motor.noches' | translate }} : </p>
+                  <p class="text-muted" style="font-weight: 500;">{{numeroNoches}}</p>
+              </div>
+            </div>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let item of listaHabitacionesSeleccionadas">
+          <div>
+            <h5 class="my-0" style="font-size: larger">{{item.TipoHabitacion}}</h5>
+            <small class="text-muted">{{ 'motor.precioreg1' | translate }} - {{moneda | monedaFormato}} {{item.PrecioXNoche}}</small>      <br>
+            <small class="text-muted">{{item.Capacidad}} {{ 'motor.huespedes' | translate }} - {{numeroNoches}} {{ 'motor.noches' | translate }}</small>            
+          </div>
+          <div>
+            <span class="text-muted">{{moneda | monedaFormato}} {{item.PrecioSubTotal}}</span>
+          </div>              
+        </li>
+
+
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total ({{moneda}})</span>
+          <strong>{{moneda | monedaFormato}} {{checkOutModel.montoPago}}</strong>
+        </li>
+      </ul>
+      <!-- Cart -->
+
+    </div>
+
+  </div>
+
+</div>

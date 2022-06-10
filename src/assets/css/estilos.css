@@ -1,0 +1,86 @@
+@font-face {
+  font-family: titulo;
+  src: url(../fonts/titulo.otf);
+}
+
+@font-face {
+  font-family: subtitulo;
+  src: url(../fonts/subtitulo.ttf);
+}
+
+@font-face {
+  font-family: texto;
+  src: url(../fonts/texto.otf);
+}
+
+.title {
+  font-family: titulo;
+}
+
+.subtitle {
+  font-family: subtitulo;
+}
+
+.text {
+  font-family: texto;
+}
+
+.bg-humo {
+  background-color: #E4DDB3;
+  background-size: cover;
+  background-position: center;
+}
+.text-humo {
+  color: #E4DDB3;
+}
+.bg-hueso{
+  background-color: #E0DCE4;
+  background-size: cover;
+  background-position: center;
+}
+.text-hueso{
+  color: #E0DCE4;
+}
+
+.bg-naranja {
+  background-color: #E9993A;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-naranja {
+  color: #E9993A;
+}
+
+.bg-marron {
+  background-color: #AB511D;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-marron {
+  color: #AB511D;
+}
+
+.bg-lago {
+  background-color: #57BFB3;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-lago {
+  color: #2B7784;
+}
+
+.bg-rojo {
+  background-color: #AD3335;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-rojo {
+  color: #AD3335;
+}
+.text-justify{
+    text-align: justify;
+}

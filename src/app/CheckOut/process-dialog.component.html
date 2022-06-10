@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>{{ 'motor.procreserva' | translate }}</h1>
+<div style="overflow: hidden;" mat-dialog-content>
+  
+  <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="showLoadingSpinner == true"></mat-spinner>
+
+  <div class="alert alert-success" role="alert" *ngIf="showLoadingSpinner == false && isOk == true">
+    {{ 'motor.procreservaok' | translate }}
+    <br/>
+    <span>{{ 'motor.tipotarjeta' | translate }} : </span>
+    <span>{{respuestaCheckOut.TipoTarjeta}} </span><br/>
+    <span>{{ 'motor.nrotarjeta' | translate }} : </span>
+    <span>{{respuestaCheckOut.NroTarjeta}} </span><br/>
+    <span>{{ 'motor.fechahora' | translate }} : </span>
+    <span>{{respuestaCheckOut.FechaPago | date:'dd/MM/yyyy HH:mm'}}</span><br/>
+    <span>{{ 'motor.moneda' | translate }} : </span>
+    <span>{{respuestaCheckOut.MonedaCodigo}}</span><br/>
+    <span>{{ 'motor.montototal' | translate }} : </span>
+    <span>{{respuestaCheckOut.MontoPagado}}</span>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="showLoadingSpinner == false && isOk == false">
+    <span *ngIf="respuestaCheckOut.TipoRespuesta == 2"> {{ 'motor.checkavaierr' | translate }} </span>
+    <span *ngIf="respuestaCheckOut.TipoRespuesta == 7"> {{ 'motor.errorpayment' | translate }} <br> {{respuestaCheckOut.MensajeError}} </span><br/>
+    <span>{{ 'motor.nropedido' | translate }} :</span>
+    <span>{{respuestaCheckOut.CodigoReserva}}</span><br/>
+    <span>{{ 'motor.fechahora' | translate }} :</span>
+    <span>{{respuestaCheckOut.FechaPago | date:'dd/MM/yyyy HH:mm'}}</span><br/>
+  </div>
+
+</div>
+<div mat-dialog-actions *ngIf="showLoadingSpinner == false">
+  <button class="btn btn-success btn-lg" *ngIf="isOk == true" (click)="generarOrden()" mat-button mat-dialog-close> {{ 'motor.aceptar' | translate }}</button>
+  <button class="btn btn-danger btn-lg" *ngIf="isOk == false" (click)="postback()" mat-button mat-dialog-close>{{ 'motor.goback' | translate }}</button>
+</div>
