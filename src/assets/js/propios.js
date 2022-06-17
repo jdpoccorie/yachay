@@ -30,5 +30,3 @@ function cycleTestimonials(index) {
     });
   }, 2000); //adjust scroll speed in miliseconds
 }
-//run the function
-cycleTestimonials(0);
