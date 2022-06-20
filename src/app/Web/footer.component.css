@@ -1,8 +1,10 @@
 footer {
-  background: #373435;
+  /* background: #373435; */
   margin-top: auto;
   padding: 1% 3% 1% 3%;
   width: 100%;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 footer ul {
@@ -232,5 +234,59 @@ footer ul a {
 
   .footer-bottom-wrapper {
     font-size: 1.3em;
+  }
+}
+/* fondo aurora */
+.aurora {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  background: #101729;
+}
+.aurora .aurora-one,
+.aurora .aurora-two,
+.aurora .aurora-three {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.2;
+  border-radius: 100%;
+}
+.aurora .aurora-one {
+  width: 600px;
+  height: 600px;
+  left: -50px;
+  top: -300px;
+  z-index: 1;
+  animation: fly 12s linear infinite;
+  transform: rotate(0) translate(80px) rotate(0);
+  background-color: #af51ee;
+}
+.aurora .aurora-two {
+  width: 500px;
+  height: 800px;
+  bottom: -30px;
+  left: -80px;
+  background-color: #3f0db4;
+}
+.aurora .aurora-three {
+  width: 450px;
+  height: 450px;
+  bottom: -80px;
+  right: -100px;
+  animation: flyPlus 8s linear infinite;
+  transform: rotate(0) translate(100px) rotate(0);
+  background-color: #8051ee;
+}
+@keyframes fly {
+  100% {
+    transform: rotate(1turn) translate(100px) rotate(-1turn);
+  }
+}
+@keyframes flyPlus {
+  100% {
+    transform: rotate(-1turn) translate(100px) rotate(1turn);
   }
 }
