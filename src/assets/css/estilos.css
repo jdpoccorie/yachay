@@ -14,15 +14,15 @@
 }
 
 .title {
-  font-family: titulo;
+  font-family: titulo !important;
 }
 
 .subtitle {
-  font-family: subtitulo;
+  font-family: subtitulo !important;
 }
 
 .text {
-  font-family: texto;
+  font-family: texto !important;
 }
 
 .bg-humo {
