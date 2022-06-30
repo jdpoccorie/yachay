@@ -4,7 +4,7 @@ export class SeleccionHabitacion{
         public TipoHabitacion?:string,
         public Capacidad?:number,
         public PrecioXNoche?:number,
-        public PrecioSubTotal?:number,        
+        public PrecioSubTotal?:number,
         public Moneda?:string,
         public nroNoches?: number,
 
