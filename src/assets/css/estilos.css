@@ -79,7 +79,7 @@
 }
 
 .text-rojo {
-  color: #AD3335;
+  color: #AD3335 !important;
 }
 .text-justify{
     text-align: justify;
