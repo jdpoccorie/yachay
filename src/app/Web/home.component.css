@@ -241,7 +241,7 @@ input:checked~.content-test {
 .content_testimonial-1 .picto {
   height: 100px;
   width: 200px;
-  background-image: url("../../assets/image/recursos/cpe.png");
+  background-image: url("../../assets/image/recursos/erp.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -264,17 +264,17 @@ input:checked~.content-test {
 }
 
 .content_testimonial-2 h1 {
-  color: #f5d76e;
+  color: #0089D6;
   font-family: titulo;
   font-size: 35px;
 }
 
 .content_testimonial-3 .picto {
-  height: 100px;
-  width: 100px;
-  background-image: url("https://i.postimg.cc/zV7sq04z/mod-Movers-Logo.jpg");
+  height: 120px;
+  width: 220px;
+  background-image: url("../../assets/image/recursos/cpe.png");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -286,10 +286,10 @@ input:checked~.content-test {
 
 .content_testimonial-4 .picto {
   height: 100px;
-  width: 100px;
-  background-image: url("https://i.postimg.cc/4Y3rypTz/ak-Pest-Control-Logo.jpg");
+  width: 200px;
+  background-image: url("../../assets/image/recursos/nuvefact.png");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -315,8 +315,8 @@ input:checked~label.label_testimonial-1 {
 }
 
 input:checked~label.label_testimonial-2 {
-  color: #f5d76e;
-  border-right: solid 4px #f5d76e;
+  color: #0089D6;
+  border-right: solid 4px #0089D6;
 }
 
 input:checked~label.label_testimonial-3 {
@@ -336,7 +336,7 @@ label.label_testimonial-1:before {
   width: 60px;
   height: 50px;
   margin-left: 15px;
-  background-image: url("../../assets/image/recursos/cpe-ico.png");
+  background-image: url("../../assets/image/recursos/erp-ico.png");
   background-position: center;
   background-size: 75% 75%;
   background-repeat: no-repeat;
@@ -361,10 +361,10 @@ label.label_testimonial-3:before {
   content: " ";
   display: block;
   position: absolute;
-  width: 50px;
+  width: 60px;
   height: 50px;
   margin-left: 15px;
-  background-image: url("https://i.postimg.cc/zV7sq04z/mod-Movers-Logo.jpg");
+  background-image: url("../../assets/image/recursos/cpe-ico.png");
   background-position: center;
   background-size: 75% 75%;
   background-repeat: no-repeat;
@@ -378,7 +378,7 @@ label.label_testimonial-4:before {
   width: 50px;
   height: 50px;
   margin-left: 15px;
-  background-image: url("https://i.postimg.cc/4Y3rypTz/ak-Pest-Control-Logo.jpg");
+  background-image: url("../../assets/image/recursos/nuvefact-ico.png");
   background-position: center;
   background-size: 75% 75%;
   background-repeat: no-repeat;
@@ -409,10 +409,10 @@ label:first-letter {
       left top,
       right top,
       from(#ffffff),
-      to(#f5d76e59));
-  background-image: -webkit-linear-gradient(left, #ffffff, #f5d76e59);
-  background-image: -o-linear-gradient(left, #ffffff, #f5d76e59);
-  background-image: linear-gradient(to right, #ffffff, #f5d76e59);
+      to(#0089D6));
+  background-image: -webkit-linear-gradient(left, #ffffff, #0089D6);
+  background-image: -o-linear-gradient(left, #ffffff, #0089D6);
+  background-image: linear-gradient(to right, #ffffff, #0089D6);
   font-size: 1.2rem;
   -webkit-transition: font-size 0.5s;
   -o-transition: font-size 0.5s;
@@ -499,4 +499,28 @@ p.testimonialFrom {
 
 .btn-demo:active {
   box-shadow: 0 0.3em 1em -0.5em rgba(87, 191, 179, 0.519);
+}
+
+/* estilos de imágenes */
+.img-clientes {
+  width: 200px;
+  height: 130px;
+  margin: 5px;
+}
+
+.img-clientes:hover {
+  position: relative;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  z-index: 1000;
+}
+
+* {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
