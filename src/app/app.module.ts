@@ -76,14 +76,15 @@ import { HomeWebComponent } from './Web/home.component';
 import { NosotrosWebComponent } from './Web/nosotros.component';
 import { ContactoWebComponent } from './Web/contacto.component';
 import { GaleriaWebComponent } from './Web/galeria.component';
+import { ComercioWebComponent } from './Web/comercio.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent, 
+    AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
     ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent,
-    ContactoWebComponent, GaleriaWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,16 +110,17 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
       }
     }),
     RouterModule.forRoot([
-      { path: "home", component: HomeWebComponent }, 
+      { path: "home", component: HomeWebComponent },
       { path: "nosotros", component: NosotrosWebComponent },
       { path: "contacto", component: ContactoWebComponent },
       { path: "galeria", component: GaleriaWebComponent },
-      { path: "booking/:checkIn/:checkOut/:nroPersonas", component: HabitacionesComponent }, 
+      { path: "comercio", component: ComercioWebComponent},
+      { path: "booking/:checkIn/:checkOut/:nroPersonas", component: HabitacionesComponent },
       { path: "checkout", component: CheckOutComponent, canActivate: [StoreFirstGuard] },
       { path: "orden-detail", component: DetalleOrdenComponent, canActivate: [StoreFirstGuard] },
       { path: "**", redirectTo: "/home" },
       ], {useHash: true}),
-    NgbModule      
+    NgbModule
   ],
   exports:  [
     A11yModule,
