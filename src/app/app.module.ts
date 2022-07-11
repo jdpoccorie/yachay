@@ -77,6 +77,7 @@ import { NosotrosWebComponent } from './Web/nosotros.component';
 import { ContactoWebComponent } from './Web/contacto.component';
 import { GaleriaWebComponent } from './Web/galeria.component';
 import { ComercioWebComponent } from './Web/comercio.component';
+import { HotelWebComponent } from './Web/hotel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
@@ -84,7 +85,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
   declarations: [
     AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
     ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent,
-    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,6 +116,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
       { path: "contacto", component: ContactoWebComponent },
       { path: "galeria", component: GaleriaWebComponent },
       { path: "comercio", component: ComercioWebComponent},
+      { path: "hoteles", component:HotelWebComponent},
       { path: "booking/:checkIn/:checkOut/:nroPersonas", component: HabitacionesComponent },
       { path: "checkout", component: CheckOutComponent, canActivate: [StoreFirstGuard] },
       { path: "orden-detail", component: DetalleOrdenComponent, canActivate: [StoreFirstGuard] },
