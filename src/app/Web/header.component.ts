@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, EventEmitter, Inject, Output } from "@angular/core";
+import { Component, EventEmitter, Inject, Input, Output } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -9,15 +9,18 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class HeaderWebComponent {
 
+    @Input() hotel:boolean;
+    @Input() inicio:boolean;
+
     @Output() dataEvent = new EventEmitter();
-    
+
     constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document){
 
     }
 
     setLanguage(lang: string){
         this.translate.use(lang);
-        this.dataEvent.emit(lang); 
+        this.dataEvent.emit(lang);
     }
 
     home(){

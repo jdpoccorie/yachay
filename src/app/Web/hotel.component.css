@@ -1,92 +1,70 @@
-.fondo-h {
-  background-image: url("../../assets/image/galeria/Yachay.jpg");
-  background-color: #420606;
-  height: 650px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+.flexing {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
 }
-
-.aurora {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: 650px;
-  position: relative;
-  overflow: hidden;
-  background: #101729;
-}
-
-.aurora .aurora-text {
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  transform: translate(-45%, -45%);
-  font-size: 2rem;
-  font-family: titulo;
-  text-transform: uppercase;
-  margin: 0px;
-  z-index: 2;
-}
-
-.aurora .subtitle-1 {
-  position: absolute;
-  top: 55%;
-  left: 45%;
-  transform: translate(-45%, -45%);
-  font-size: 14px;
-  font-family: subtitulo;
-  margin: 0px;
-  z-index: 2;
-}
-
-.aurora .aurora-one,
-.aurora .aurora-two,
-.aurora .aurora-three {
-  position: absolute;
-  filter: blur(60px);
-  opacity: 0.2;
-  border-radius: 100%;
-}
-
-.aurora .aurora-one {
-  width: 400px;
-  height: 400px;
-  left: -50px;
-  top: -500px;
-  z-index: 1;
-  animation: fly 12s linear infinite;
-  transform: rotate(0) translate(80px) rotate(0);
-  background-color: #af51ee;
-}
-
-.aurora .aurora-two {
-  width: 300px;
-  height: 450px;
-  bottom: -30px;
-  left: -80px;
-  background-color: #3f0db4;
-}
-
-.aurora .aurora-three {
-  width: 350px;
-  height: 350px;
-  bottom: -80px;
-  right: -200px;
-  animation: flyPlus 8s linear infinite;
-  transform: rotate(0) translate(100px) rotate(0);
-  background-color: #8051ee;
-}
-
-@keyframes fly {
-  100% {
-    transform: rotate(1turn) translate(100px) rotate(-1turn);
+@media screen and (min-width: 1000px) {
+  .flexing {
+    flex-direction: row;
   }
 }
 
-@keyframes flyPlus {
-  100% {
-    transform: rotate(-1turn) translate(100px) rotate(1turn);
+.section {
+  flex: 1;
+  position: relative;
+  transition: 0.5s ease;
+}
+.section--orange {
+  background-color: #E9993A;
+}
+.section--bone {
+  background-color: #E4DDB3;
+}
+.section--lake {
+  background-color: #2B7784;
+}
+.section--marron {
+  background-color: #AB511D;
+}
+.section--red{
+  background-color: #AD3335;
+}
+.section:hover, .section:active, .section:focus {
+  flex: 3;
+}
+.section:hover .title, .section:active .title, .section:focus .title {
+  transform: translate(-50%, -50%) rotate(0);
+}
+.section:hover .texto-1, .section:active .texto-1, .section:focus .texto-1 {
+  transform: translate(-50%, -50%) rotate(0);
+}
+@media screen and (min-width: 1000px) {
+  .section:hover .title, .section:active .title, .section:focus .title {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+.section .title {
+  font-family: "title";
+  font-size: 2rem;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+}
+.section .texto-1 {
+  font-family: "text";
+  font-size: 14px;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+}
+@media screen and (min-width: 1000px) {
+  .section .title {
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 }

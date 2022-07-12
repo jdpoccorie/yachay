@@ -1,52 +1,38 @@
-  <header-web (dataEvent)='setLanguage($event)'></header-web>
+  <header-web (dataEvent)='setLanguage($event)' [hotel]='true'></header-web>
   <!-- <body class="aurora">
     <div class="aurora-one"></div>
     <div class="aurora-two"></div>
     <div class="aurora-three"></div>
     <h3 class="aurora-text text-white">Aurora</h3>
   </body> -->
-  <div class="w-100 px-0">
-    <div class="row">
-      <div class="col-6 p-0">
-        <div class="aurora">
-          <div class="aurora-one"></div>
-          <div class="aurora-two"></div>
-          <div class="aurora-three"></div>
-          <h3 class="aurora-text text-white">SOFTWARE HOTELERO</h3>
-          <p class="text-white subtitle-1">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
-      <div class="col-6 p-0">
-        <div id="carusel-h" class="carousel slide carousel-fade" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carusel-h" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carusel-h" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="container-fluid my-5">
+  <section class="container-fluid body-m">
     <div class="row">
       <div class="col-6 offset-3">
         <div class="container text-center">
           <h2 class="title fw-bold text-rojo">GESTIONA TU HOTEL O HOSPEDAJE</h2>
-          <p class="text-justify text fw-bold text-lago lh-1">Se trata de un software hotelero muy fácil de instalar y de usar, diseñado para hoteles y hospedajes medianos. Se trata de un SaaS (Software as a Service), lo que significa que está basado “en la nube”</p>
+          <p class="text-justify text fw-bold text-lago lh-1">Se trata de un software hotelero muy fácil de instalar y
+            de usar, diseñado para hoteles y hospedajes medianos. Se trata de un SaaS (Software as a Service), lo que
+            significa que está basado “en la nube”</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid pb-5">
+      <div class="flexing">
+        <div class="section section--orange">
+          <h3 class="title">CRONOGRAMA</h3>
+          <p class="texto-1">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="section section--bone">
+          <h3 class="title">GESTIONA</h3>
+        </div>
+        <div class="section section--lake">
+          <h3 class="title">INVENTARIO</h3>
+        </div>
+        <div class="section section--marron">
+          <h3 class="title">FACTURACION</h3>
+        </div>
+        <div class="section section--red">
+          <h3 class="title">RESERVAS</h3>
         </div>
       </div>
     </div>

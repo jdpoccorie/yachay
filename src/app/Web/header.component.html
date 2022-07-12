@@ -13,14 +13,17 @@
         </ul>
         <ul class="navbar-nav text-center my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold text-rojo" aria-current="page" href="#">
+            <a class="nav-link text-white fw-bold text text-rojo" aria-current="page" [routerLink]="['/']" routerLinkActive="active" >
               <p>HOME</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="fas fa-file-signature fs-3"></i></a>
+            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/comercio']" routerLinkActive="router-link-active" >COMERCIO</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/hoteles']" routerLinkActive="router-link-active" >HOTELES</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-list-alt fs-3"></i>
@@ -33,10 +36,9 @@
               </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true"><i
-                class="fas fa-address-card fs-3"></i></a>
+            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/']" routerLinkActive="router-link-active"  tabindex="-1" aria-disabled="true">RESTAURANTE</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-auto">
@@ -48,7 +50,7 @@
       </div>
     </div>
   </nav>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-top: -150px;">
+  <div *ngIf="!hotel" id="carouselExampleControls" class="carousel slide margen-h" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../../assets/image/carrousel/carrousel-1.png" class="d-block w-100 img-fluid" alt="...">
@@ -72,20 +74,40 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <!-- <div id="carouselExampleSlidesOnly" class="carousel slide bg-humo" data-bs-ride="carousel" style="margin-top: -150px;">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../assets/image/carrousel/carrousel-1.png" class="d-block w-100" height="780px" alt="...">
+  <div *ngIf="hotel" class="w-100 px-0 margen-h">
+    <div class="row d-flex align-items-stretch">
+      <div class="col-6 p-0">
+        <div class="aurora">
+          <div class="aurora-one"></div>
+          <div class="aurora-two"></div>
+          <div class="aurora-three"></div>
+          <h3 class="aurora-text text-white">SOFTWARE HOTELERO</h3>
+          <p class="text-white subtitle-1">Lorem ipsum dolor sit amet.</p>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="../../assets/image/carrousel/carrousel-2.png" class="d-block w-100" height="780px" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/image/carrousel/carrousel-3.png" class="d-block w-100" height="780px" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/image/carrousel/carrousel-4.png" class="d-block w-100" height="780px" alt="...">
+      <div class="col-6 p-0">
+        <div id="carusel-h" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carusel-h" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carusel-h" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </header>

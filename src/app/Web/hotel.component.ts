@@ -1,4 +1,4 @@
-import { Component, ElementRef } from "@angular/core";
+import { Component, ElementRef, Input } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -6,7 +6,8 @@ import { TranslateService } from "@ngx-translate/core";
     templateUrl: "./hotel.component.html",
     styleUrls: ["./hotel.component.css"]
 })
-export class HotelWebComponent {
+export class HotelWebComponent{
+    @Input() hotel:true;
     constructor(private translate: TranslateService){
     }
     setLanguage(lang: string){

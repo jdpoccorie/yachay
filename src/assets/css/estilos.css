@@ -84,3 +84,10 @@
 .text-justify{
     text-align: justify;
 }
+.margen-h{
+  margin-top: -150px;
+}
+.body-m{
+  margin-top: 3%;
+  margin-bottom: 7%;
+}
