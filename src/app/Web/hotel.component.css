@@ -14,20 +14,20 @@
   position: relative;
   transition: 0.5s ease;
 }
-.section--orange {
-  background-color: #E9993A;
+.section--lake {
+  background-color: #57BFB3;
 }
-.section--bone {
+.section--smoke {
   background-color: #E4DDB3;
 }
-.section--lake {
-  background-color: #2B7784;
+.section--red {
+  background-color: #DB4528;
 }
-.section--marron {
-  background-color: #AB511D;
+.section--bone {
+  background-color: #E0DCE4;
 }
-.section--red{
-  background-color: #AD3335;
+.section--yellow{
+  background-color: #F8B935;
 }
 .section:hover, .section:active, .section:focus {
   flex: 3;
@@ -35,9 +35,9 @@
 .section:hover .title, .section:active .title, .section:focus .title {
   transform: translate(-50%, -50%) rotate(0);
 }
-.section:hover .texto-1, .section:active .texto-1, .section:focus .texto-1 {
-  transform: translate(-50%, -50%) rotate(0);
-}
+/* .section:hover .texto-1, .section:active .texto-1, .section:focus .texto-1 {
+  transform: translate(-50%, 90%) rotate(0);
+} */
 @media screen and (min-width: 1000px) {
   .section:hover .title, .section:active .title, .section:focus .title {
     transform: translate(-50%, -50%) scale(1.25);
@@ -53,18 +53,25 @@
   transform: translate(-50%, -50%);
   transition: 0.5s ease;
 }
-.section .texto-1 {
+/* .section .texto-1 {
   font-family: "text";
   font-size: 14px;
-  left: 50%;
+  line-height: 90%;
+  left: 20%;
   margin: 0;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -80%);
   transition: 0.5s ease;
-}
+} */
 @media screen and (min-width: 1000px) {
   .section .title {
     transform: translate(-50%, -50%) rotate(90deg);
   }
 }
+/* @media screen and (min-width: 1000px){
+  .section .texto-1 {
+    transform: translate(-30%, -70%) rotate(90deg);
+  }
+} */
+

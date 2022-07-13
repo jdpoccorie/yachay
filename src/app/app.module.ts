@@ -77,15 +77,17 @@ import { NosotrosWebComponent } from './Web/nosotros.component';
 import { ContactoWebComponent } from './Web/contacto.component';
 import { GaleriaWebComponent } from './Web/galeria.component';
 import { ComercioWebComponent } from './Web/comercio.component';
+import { RestauranteWebComponent } from './Web/restaurante.component';
 import { HotelWebComponent } from './Web/hotel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { SistemaWebComponent } from './Web/sistema.component';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
-    ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent,
-    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent,
+    ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent, SistemaWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +118,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
       { path: "contacto", component: ContactoWebComponent },
       { path: "galeria", component: GaleriaWebComponent },
       { path: "comercio", component: ComercioWebComponent},
+      { path: "sistema", component: SistemaWebComponent},
+      { path: "restaurante", component: RestauranteWebComponent},
       { path: "hoteles", component:HotelWebComponent},
       { path: "booking/:checkIn/:checkOut/:nroPersonas", component: HabitacionesComponent },
       { path: "checkout", component: CheckOutComponent, canActivate: [StoreFirstGuard] },
