@@ -524,3 +524,9 @@ p.testimonialFrom {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+/* estilos para sección de tabs */
+.logo{
+  background-color: #57BFB3;
+  border-radius: 5px;
+  padding: 2px;
+}
