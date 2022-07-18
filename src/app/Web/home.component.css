@@ -471,9 +471,8 @@ p.testimonialFrom {
   background-color: #E0DCE4;
   align-items: center;
   text-align: center;
-  border-radius: 80px 0 80px 0;
+  border-radius: 80px;
 }
-
 /* CSS */
 .btn-demo {
   /* display: flex;
@@ -503,17 +502,17 @@ p.testimonialFrom {
 
 /* estilos de imágenes */
 .img-clientes {
-  width: 230px;
+  width: 150px;
   height: auto;
-  margin: 10px;
+  margin: 15px;
 }
 
 .img-clientes:hover {
   position: relative;
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
   z-index: 1000;
 }
 
