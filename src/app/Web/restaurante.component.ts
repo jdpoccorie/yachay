@@ -1,4 +1,4 @@
-import { Component, ElementRef } from "@angular/core";
+import { Component, ElementRef, Input } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -7,6 +7,8 @@ import { TranslateService } from "@ngx-translate/core";
     styleUrls: ["./restaurante.component.css"]
 })
 export class RestauranteWebComponent {
+    @Input() restaurante:true;
+    
     constructor(private translate: TranslateService){
     }
     setLanguage(lang: string){

@@ -11,6 +11,7 @@ export class HeaderWebComponent {
 
     @Input() hotel:boolean;
     @Input() inicio:boolean;
+    @Input() restaurante:boolean;
 
     @Output() dataEvent = new EventEmitter();
 
