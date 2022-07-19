@@ -1,5 +1,5 @@
 <header class="container-fluid px-0">
-  <nav class="navbar navbar-expand-lg navbar-light bg-trasparent" style="z-index: 10;">
+  <nav id="Menu" class="navbar navbar-expand-lg navbar-light py-1 bg-header">
     <div class="container text-center">
       <a class="navbar-brand text-center" href="#">
         <img src="../../assets/image/recursos/Yachay.png" width="180px" class="img-fluid" alt="">
@@ -13,15 +13,13 @@
         </ul>
         <ul class="navbar-nav text-center my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold text text-rojo" aria-current="page" [routerLink]="['/']" routerLinkActive="active" >
-              <p>HOME</p>
-            </a>
+            <a class="nav-link text-white fw-bold subtitle text-blanco" aria-current="page" [routerLink]="['/']" routerLinkActive="active" ><p>HOME</p></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/comercio']" routerLinkActive="router-link-active" >COMERCIO</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/comercio']" routerLinkActive="router-link-active" >COMERCIO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/hoteles']" routerLinkActive="router-link-active" >HOTELES</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/hoteles']" routerLinkActive="router-link-active" >HOTELES</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button"
@@ -38,7 +36,7 @@
             </ul>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link text-white text fw-bold text-rojo" [routerLink]="['/']" routerLinkActive="router-link-active"  tabindex="-1" aria-disabled="true">RESTAURANTE</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/']" routerLinkActive="router-link-active"  tabindex="-1" aria-disabled="true">RESTAURANTE</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-auto">
@@ -89,13 +87,13 @@
         <div id="carusel-h" class="carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block w-100 alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block img-fluid" alt="...">
+              <img src="../../assets/image/galeria/Yachay.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carusel-h" data-bs-slide="prev">
