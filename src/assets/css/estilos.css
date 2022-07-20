@@ -99,3 +99,28 @@
   background-color: rgba(255, 255, 255, 0.423);
   border-radius: 50px;
 }
+.btn-demo {
+  /* display: flex;
+  align-items: flex-end; */
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: linear-gradient(0deg, rgb(219, 69, 40, 1) 0%, rgb(197, 8, 11, 1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em rgba(219, 69, 40, 0.596);
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-demo:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em rgba(219, 69, 40, 0.519);
+}
+
+.btn-demo:active {
+  box-shadow: 0 0.3em 1em -0.5em rgba(219, 69, 40, 0.519);
+}

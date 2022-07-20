@@ -76,6 +76,7 @@ import { HomeWebComponent } from './Web/home.component';
 import { NosotrosWebComponent } from './Web/nosotros.component';
 import { ContactoWebComponent } from './Web/contacto.component';
 import { GaleriaWebComponent } from './Web/galeria.component';
+import { AgenciaWebComponent } from './Web/agencia.component';
 import { ComercioWebComponent } from './Web/comercio.component';
 import { RestauranteWebComponent } from './Web/restaurante.component';
 import { HotelWebComponent } from './Web/hotel.component';
@@ -87,7 +88,7 @@ import { SistemaWebComponent } from './Web/sistema.component';
   declarations: [
     AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
     ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent, SistemaWebComponent,
-    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent, AgenciaWebComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +120,7 @@ import { SistemaWebComponent } from './Web/sistema.component';
       { path: "galeria", component: GaleriaWebComponent },
       { path: "comercio", component: ComercioWebComponent},
       { path: "sistema", component: SistemaWebComponent},
+      { path: "agencia", component: AgenciaWebComponent},
       { path: "restaurante", component: RestauranteWebComponent},
       { path: "hoteles", component:HotelWebComponent},
       { path: "booking/:checkIn/:checkOut/:nroPersonas", component: HabitacionesComponent },
