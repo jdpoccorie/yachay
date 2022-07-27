@@ -67,7 +67,11 @@
   background-size: cover;
   background-position: center;
 }
-
+.bg-pantano{
+  background-color: #2B7784;
+  background-size: cover;
+  background-position: center;
+}
 .text-lago {
   color: #2B7784;
 }
