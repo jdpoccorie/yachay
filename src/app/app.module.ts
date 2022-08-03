@@ -75,6 +75,7 @@ import { HeaderWebComponent } from './Web/header.component';
 import { HomeWebComponent } from './Web/home.component';
 import { NosotrosWebComponent } from './Web/nosotros.component';
 import { ContactoWebComponent } from './Web/contacto.component';
+import { MovilWebComponent } from './Web/movil.component';
 import { GaleriaWebComponent } from './Web/galeria.component';
 import { AgenciaWebComponent } from './Web/agencia.component';
 import { ComercioWebComponent } from './Web/comercio.component';
@@ -88,7 +89,7 @@ import { SistemaWebComponent } from './Web/sistema.component';
   declarations: [
     AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
     ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent, SistemaWebComponent,
-    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent, AgenciaWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent, AgenciaWebComponent, MovilWebComponent,
   ],
   imports: [
     BrowserModule,
@@ -117,6 +118,7 @@ import { SistemaWebComponent } from './Web/sistema.component';
       { path: "home", component: HomeWebComponent },
       { path: "nosotros", component: NosotrosWebComponent },
       { path: "contacto", component: ContactoWebComponent },
+      { path: "movil", component: MovilWebComponent},
       { path: "galeria", component: GaleriaWebComponent },
       { path: "comercio", component: ComercioWebComponent},
       { path: "sistema", component: SistemaWebComponent},

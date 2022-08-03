@@ -49,7 +49,7 @@
 }
 
 .text-naranja {
-  color: #E9993A;
+  color: #DB4528;
 }
 
 .bg-marron {
@@ -87,6 +87,11 @@
 }
 .text-justify {
     text-align: justify;
+}
+.list-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .margen-h{
   margin-top: -150px;
