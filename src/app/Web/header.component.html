@@ -13,13 +13,16 @@
         </ul>
         <ul class="navbar-nav text-center my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold subtitle text-blanco" [routerLink]="['/home']" routerLinkActive="active" >HOME</a>
+            <a class="nav-link text-white fw-bold subtitle text-blanco" [routerLink]="['/home']"
+              routerLinkActive="active">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/comercio']" routerLinkActive="active" >COMERCIO</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/comercio']"
+              routerLinkActive="active">COMERCIO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/hoteles']" routerLinkActive="active" >HOTELES</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/hoteles']"
+              routerLinkActive="active">HOTELES</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button"
@@ -36,13 +39,20 @@
             </ul>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/restaurante']" routerLinkActive="active">RESTAURANTE</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/restaurante']"
+              routerLinkActive="active">RESTAURANTE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/agencia']" routerLinkActive="active">AGENCIA</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/agencia']"
+              routerLinkActive="active">AGENCIA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/contacto']" routerLinkActive="active">CONTACTO</a>
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/contacto']"
+              routerLinkActive="active">CONTACTO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/movil']"
+              routerLinkActive="active">MOVIL</a>
           </li>
         </ul>
         <ul class="navbar-nav mx-auto">
@@ -54,7 +64,8 @@
       </div>
     </div>
   </nav>
-  <div *ngIf="!hotel && !restaurante" id="carouselExampleControls" class="carousel slide margen-h" data-bs-ride="carousel">
+  <div *ngIf="!hotel && !restaurante" id="carouselExampleControls" class="carousel slide margen-h"
+    data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../../assets/image/carrousel/carrousel-2.png" class="d-block w-100 img-fluid" alt="...">
@@ -77,14 +88,25 @@
   </div>
   <div *ngIf="hotel" class="w-100 px-0 margen-h">
     <div class="row d-flex align-items-stretch">
-      <div class="col-6 p-0">
-        <div class="aurora">
+      <div class="col-6 p-0" style="position: relative;">
+        <section class="panel-bg bg-dark">
+          <h1 class="title">SOFTWARE HOTELERO</h1>
+          <h3 class="span loader subtitle"><span class="m">B</span><span class="m">E</span><span class="m">N</span><span
+              class="m">E</span><span class="m">F</span><span class="m">I</span><span class="m">T</span><span
+              class="m">S</span><span class="m">&nbsp;</span><span class="m">O</span><span class="m">F</span><span
+              class="m">&nbsp;</span><span class="m">T</span><span class="m">E</span><span class="m">C</span><span
+              class="m">H</span><span class="m">N</span><span class="m">O</span><span class="m">L</span><span
+              class="m">O</span><span class="m">G</span><span class="m">I</span><span class="m">E</span><span
+              class="m">S</span></h3>
+        </section>
+        <canvas class="lineas"></canvas>
+        <!-- <div class="aurora">
           <div class="aurora-one"></div>
           <div class="aurora-two"></div>
           <div class="aurora-three"></div>
           <h3 class="aurora-text text-white">SOFTWARE HOTELERO</h3>
           <p class="text-white subtitle-1">Lorem ipsum dolor sit amet.</p>
-        </div>
+        </div> -->
       </div>
       <div class="col-6 p-0">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -99,11 +121,13 @@
               <img src="../../assets/image/galeria/Yachay.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -140,7 +164,8 @@
           <div class="aurora-two"></div>
           <div class="aurora-three"></div>
           <h3 class="aurora-text text-white text-center">SOFTWARE RESTAURANTES</h3>
-          <p class="text-white subtitle-1 mt-2 px-4 text-center lh-sm">Administra totalmente tu hotel y facturación de una manera sencillo con el software <strong>GALILEO-ERP</strong></p>
+          <p class="text-white subtitle-1 mt-2 px-4 text-center lh-sm">Administra totalmente tu hotel y facturación de
+            una manera sencillo con el software <strong>GALILEO-ERP</strong></p>
         </div>
       </div>
       <div class="col-6 p-0">
