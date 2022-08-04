@@ -129,7 +129,7 @@ import { SistemaWebComponent } from './Web/sistema.component';
       { path: "checkout", component: CheckOutComponent, canActivate: [StoreFirstGuard] },
       { path: "orden-detail", component: DetalleOrdenComponent, canActivate: [StoreFirstGuard] },
       { path: "**", redirectTo: "/home" },
-      ], {useHash: true}),
+      ], {useHash: true},),
     NgbModule
   ],
   exports:  [

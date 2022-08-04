@@ -91,7 +91,8 @@
 .list-center{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  text-align: justify;
 }
 .margen-h{
   margin-top: -150px;
