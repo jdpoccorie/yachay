@@ -23,18 +23,19 @@
   background-color: #2B7784;
 } */
 .hr-1 {
-  padding: 0;
+  padding: 5;
   border: none;
-  border-top: medium double #2B7784;
+  border-top: line double #2B7784;
   color: #2B7784;
   text-align: center;
 }
 .hr-1:after {
-  content: "YACHAY";
+  content: "🅨🅐🅒🅗🅐🅨";
   display: inline-block;
   position: relative;
+  font-weight: bold;
   top: -0.7em;
-  font-size: 1.5em;
+  font-size: 1.3em;
   padding: 0 0.25em;
   background: white;
 }
