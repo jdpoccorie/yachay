@@ -12,9 +12,421 @@
   background-color: rgba(0, 0, 0, 0.455);
   z-index: 10;
 }
-.active{
+/* .active{
   background-color: white;
-  color: #AD3335 !important;
+  color: white !important;
   font-family: subtitulo !important;
   font-weight: bolder;
+} */
+
+/* estilos para el header */
+/* Reiniciar botones */
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+}
+
+/* Reiniciar los ul */
+ul {
+  padding: 0;
+}
+
+/* Reiniciar las a en estado hovers */
+a:hover {
+  text-decoration: none;
+}
+
+button,
+a {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+button:after,
+a:after {
+  content: "";
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #E0DCE4;
+  display: block;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: -300px;
+  left: 0;
+  z-index: -1;
+}
+button:active, button:hover, a:active, a:hover {
+  color: #E0DCE4;
+}
+button:active:after, button:hover:after, a:active:after, a:hover:after {
+  top: -50px;
+}
+button .active,
+a.active {
+  background-color: #AD3335 !important;
+  z-index: 9;
+}
+button .active:after,
+a.active:after {
+  background-color: #AD3335 !important;
+}
+
+/*
+ * Header
+ */
+.main-header {
+  /* background: white url("../../assets/image/carrousel/carrousel-2.png") right center no-repeat; */
+  background-size: cover;
+  /* font-size: 0; */
+  width: 100%;
+  /* height: 550px; */
+  overflow: hidden;
+}
+
+.main-header {
+  /* Todas la secciones en el header */
+}
+.main-header .logo,
+.main-header .actions,
+.main-header .main-menu,
+.main-header .main-search {
+  display: inline-block;
+  vertical-align: top;
+}
+.main-header .actions button,
+.main-header .main-menu ul li a,
+.main-header .main-search .search-button button {
+  background-color: #2B7784;
+  font-size: 16px;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  display: block;
+  padding: 67px 0 0;
+  margin: 0 0 0 1px;
+}
+.main-header .actions button i,
+.main-header .main-menu ul li a i,
+.main-header .main-search .search-button button i {
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+.main-header .actions button.active,
+.main-header .main-menu ul li a.active,
+.main-header .main-search .search-button button.active {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+.main-header .actions button.active:hover, .main-header .actions button.active:hover i,
+.main-header .main-menu ul li a.active:hover,
+.main-header .main-menu ul li a.active:hover i,
+.main-header .main-search .search-button button.active:hover,
+.main-header .main-search .search-button button.active:hover i {
+  color: white;
+}
+.main-header .actions button:hover, .main-header .actions button:hover i,
+.main-header .main-menu ul li a:hover,
+.main-header .main-menu ul li a:hover i,
+.main-header .main-search .search-button button:hover,
+.main-header .main-search .search-button button:hover i {
+  color: #DB4528;
+}
+
+/* Logo */
+.main-header .logo {
+  width: 100px;
+}
+.main-header .logo a {
+  background-color: #2B7784;
+  /* color: white;
+  font-size: 16px; */
+  font-weight: 100;
+  text-align: center;
+  /* border-radius: 0 0 10px 10px; */
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 35px 0 0;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .logo {
+    width: auto;
+  }
+  .main-header .logo a {
+    /* font-size: 36px; */
+    padding: 10px 5px 10px 5px;
+  }
+}
+
+/* Main-menu */
+.main-header .main-menu {
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  top: 100px;
+  left: 100%;
+  z-index: 9;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.main-header .main-menu.active {
+  width: 100%;
+  display: block;
+  left: 0;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu.active {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu {
+    overflow: visible;
+  }
+}
+
+.main-header .main-menu ul li {
+  display: block;
+}
+.main-header .main-menu ul li:hover > a {
+  background-color: #AD3335;
+}
+.main-header .main-menu ul li a {
+  width: 100%;
+  margin: 0;
+}
+.main-header .main-menu ul li a:after {
+  -moz-border-radius: 50px 0 0 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px 0 0 50px;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+}
+.main-header .main-menu ul li a:active:after, .main-header .main-menu ul li a:hover:after {
+  left: -50px;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu {
+    position: static;
+    top: auto;
+    width: auto;
+    float: right;
+    display: inline-block;
+  }
+  .main-header .main-menu ul {
+    font-size: 0;
+  }
+  .main-header .main-menu ul li {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+  .main-header .main-menu ul li a {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 1px;
+  }
+  .main-header .main-menu ul li a:after {
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    width: 100%;
+    height: 200px;
+    top: -300px;
+    left: 0;
+  }
+  .main-header .main-menu ul li a:active:after, .main-header .main-menu ul li a:hover:after {
+    top: -50px;
+    left: 0;
+  }
+}
+
+/* Sub-menu */
+.main-header .main-menu ul li.active .sub-menu,
+.main-header .main-menu ul li:hover .sub-menu {
+  height: auto;
+  opacity: 1;
+}
+.main-header .main-menu .sub-menu {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background-color: transparent;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.main-header .main-menu .sub-menu li a {
+  background-color: #E0DCE4;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 0 0 1px;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu .sub-menu li a {
+    min-width: 200px;
+  }
+}
+.main-header .main-menu .sub-menu li:first-child a {
+  margin-top: 1px;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu .sub-menu li:first-child a {
+    margin: 0 0 1px;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .main-header .main-menu .sub-menu {
+    position: absolute;
+    right: 0;
+    top: 101px;
+  }
+}
+
+/* main-search */
+.main-header .main-search {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+.main-header .main-search .search-button {
+  position: relative;
+}
+.main-header .main-search .search-button button {
+  padding: 55px 0 0;
+}
+.main-header .main-search .searcher {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 100px;
+  left: 100%;
+  z-index: 99;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.main-header .main-search .searcher button,
+.main-header .main-search .searcher input {
+  font-size: 36px;
+}
+.main-header .main-search .searcher input {
+  background: rgba(224, 220, 228, 0.993);
+  border: none;
+  color: #DB4528;
+  font-weight: 100;
+  width: 100%;
+  height: 100px;
+  padding: 0 100px 0 15px;
+}
+.main-header .main-search .searcher button {
+  color: #DB4528;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.main-header .main-search .searcher.active {
+  width: 100%;
+  left: 0;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.main-header .main-search .searcher.active button {
+  opacity: 1;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+/* Actions */
+.main-header .actions {
+  float: right;
+}
+.main-header .actions button {
+  padding: 55px 0 0;
+}
+@media only screen and (min-width: 767px) {
+  .main-header .actions {
+    display: none;
+  }
+}
+
+/* User info */
+.main-header .user-info {
+  position: absolute;
+  top: 35%;
+  right: 0;
+}
+.main-header .user-info ul li {
+  display: block;
+}
+.main-header .user-info ul li i, .main-header .user-info ul li a {
+  color: white;
+}
+.main-header .user-info ul li i {
+  font-size: 24px;
+  text-align: center;
+  width: 46px;
+  height: 46px;
+  padding: 10px 0 0;
+  margin: 0 7px 0 0;
+}
+.main-header .user-info ul li a {
+  -moz-border-radius: 23px 0 0 23px;
+  -webkit-border-radius: 23px;
+  border-radius: 23px 0 0 23px;
+  background-color: #2B7784;
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 0 15px 0 0;
+  margin: 5px 0 0;
+}
+.main-header .user-info ul li a:after {
+  -moz-border-radius: 23px 0 0 23px;
+  -webkit-border-radius: 23px;
+  border-radius: 23px 0 0 23px;
+  width: 100%;
+  height: 46px;
+  top: 0;
+  left: 100%;
+}
+.main-header .user-info ul li a:active:after, .main-header .user-info ul li a:hover:after {
+  width: 100%;
+  left: 0;
+}
+.main-header .user-info ul li a:hover, .main-header .user-info ul li a:hover i {
+  color: #DB4528;
 }

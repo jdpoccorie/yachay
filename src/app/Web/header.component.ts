@@ -1,12 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Inject,
-  Input,
-  Output,
-  OnInit,
-} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output, OnInit, Query,} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import * as $ from 'jquery';
 
@@ -59,6 +52,39 @@ export class HeaderWebComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('oninit cargado de header');
+
+    // Querys para la vista header
+    // $(".main-menu a").on("click",function(e){
+    //   var $this = $(this),
+    //   $item = $(".main-menu li"),
+    //   $item_link = $(".main-menu li a");
+
+    //   $item.removeClass("active");
+    //   $item_link.removeClass("active");
+
+    //   $this
+    //     .addClass("active")
+    //     .closest("li")
+    //     .addClass("active");
+
+    // });
+
+    $(".actions .menu-toggle").on("click", function(){
+      $(".actions .menu-toggle, .main-menu").toggleClass("active");
+    });
+
+    /*
+     * Searcher behavior
+     */
+    $(".main-search button").on("click",function(e){
+      $(this).toggleClass("active");
+      $(".main-search .searcher").toggleClass("active");
+    });
+
+    $(".main-search .searcher button").on("click",function(){
+      $(".main-search button, .main-search .searcher").removeClass("active");
+    });
+
     //   this.loadAPI = new Promise((resolve) => {
     //     this.loadScript();
     //     resolve(true);

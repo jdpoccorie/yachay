@@ -1,89 +1,60 @@
-<header class="container-fluid px-0">
-  <nav id="Menu" class="navbar navbar-expand-lg navbar-light py-1 bg-header">
-    <div class="container text-center">
-      <a class="navbar-brand text-center" href="#">
-        <img src="../../assets/image/recursos/Yachay.png" width="180px" class="img-fluid" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-center" id="navbarScroll">
-        <ul class="navbar-nav mx-auto">
-        </ul>
-        <ul class="navbar-nav text-center my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link text-white fw-bold subtitle text-blanco" [routerLink]="['/home']"
-              routerLinkActive="active">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/comercio']"
-              routerLinkActive="active">COMERCIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/hoteles']"
-              routerLinkActive="active">HOTELES</a>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-list-alt fs-3"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/restaurante']"
-              routerLinkActive="active">RESTAURANTE</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/agencia']"
-              routerLinkActive="active">AGENCIA</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/contacto']"
-              routerLinkActive="active">CONTACTO</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link text-white subtitle fw-bold text-blanco" [routerLink]="['/movil']"
-              routerLinkActive="active">MOVIL</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav mx-auto">
-        </ul>
-        <form class="d-flex text-end">
-          <button type="button" class="btn btn-outline-light me-3">Ingresar</button>
-          <button type="button" class="btn btn-outline-light">Registrar</button>
-        </form>
-      </div>
+<header class="main-header">
+  <div class="logo"><a href="#"><img src="../../assets/image/recursos/Yachay.png" class="img-fluid" alt=""></a></div>
+  <div class="main-search">
+    <div class="search-button">
+      <button class="subtitle" type="button"><i class="fa fa-search"></i>Search</button>
     </div>
+    <div class="searcher">
+      <input type="text" value="" placeholder="Buscar...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" class="menu-toggle"><i class="fa fa-navicon"></i>menu</button>
+  </div>
+  <nav class="main-menu">
+    <ul>
+      <li><a class="subtitle" [routerLink]="['/home']"  routerLinkActive="active"><i class="fa fa-home"></i>Home</a></li>
+      <li><a class="subtitle" [routerLink]="['/comercio']" routerLinkActive="active"><i class="fas fa-store"></i>Comercio</a></li>
+      <li><a class="subtitle" [routerLink]="['/hoteles']"  routerLinkActive="active"><i class="fas fa-hotel"></i>Hotel</a></li>
+      <!-- <li>
+        <a href="#"><i class="fa fa-male"></i>Account</a>
+        <ul class="sub-menu">
+          <li><a href="#">¿Perdió su contraseña?</a></li>
+          <li><a href="#">Realizar pedido pagar</a></li>
+          <li><a href="#">¿Perdió su contraseña?</a></li>
+        </ul>
+      </li> -->
+      <li><a class="subtitle" [routerLink]="['/restaurante']"  routerLinkActive="active"><i class="fas fa-utensils"></i>Restaurante</a></li>
+      <li><a class="subtitle" [routerLink]="['/contacto']"  routerLinkActive="active"><i class="far fa-envelope"></i>Contacto</a></li>
+    </ul>
   </nav>
-  <div *ngIf="!hotel && !restaurante" id="carouselExampleControls" class="carousel slide margen-h"
-    data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../assets/image/carrousel/carrousel-2.png" class="d-block w-100 img-fluid" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/image/carrousel/carrousel-3.png" class="d-block w-100 img-fluid" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../assets/image/carrousel/carrousel-4.png" class="d-block w-100 img-fluid" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <div class="user-info">
+    <ul>
+      <li><a class="subtitle" href="#"><i class="fas fa-eye"></i>Galileo ERP</a></li>
+      <li><a class="subtitle" href="#"><i class="fa fa-shopping-cart"></i>Obtenerlo ya!</a></li>
+    </ul>
   </div>
 </header>
+<div *ngIf="!hotel && !restaurante" id="carouselExampleControls" class="carousel slide margen-h"
+  data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/image/carrousel/carrousel-2.png" class="d-block w-100 img-fluid" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/image/carrousel/carrousel-3.png" class="d-block w-100 img-fluid" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/image/carrousel/carrousel-4.png" class="d-block w-100 img-fluid" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
