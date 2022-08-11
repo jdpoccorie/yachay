@@ -1,22 +1,3 @@
-.carousel {
-  background: #e4ddb367;
-  border-radius: 15px;
-  padding: 5px 15px;
-}
-
-.carousel-cell {
-  width: 50%;
-  height: 650px;
-  margin: 10px;
-  background: #8C8;
-  border-radius: 15px;
-  background-position: center center;
-  background-size: cover;
-}
-.border-movil{
-  border: solid #57BFB3 5px;
-  border-radius: 20px;
-}
 /* .hr-1{
   border-radius: 5px;
   height: 10px;

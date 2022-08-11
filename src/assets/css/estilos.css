@@ -163,7 +163,7 @@
   transition: all 0.3s ease;
   z-index: 3;
 }
-h1:hover {
+.panel-bg h1:hover {
   transform: translate3d(0, -10px, 22px);
   color: #ff0266;
 }
