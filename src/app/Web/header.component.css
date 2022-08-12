@@ -90,10 +90,6 @@ a.active:after {
   /* height: 550px; */
   overflow: hidden;
 }
-
-.main-header {
-  /* Todas la secciones en el header */
-}
 .main-header .logo,
 .main-header .actions,
 .main-header .main-menu,

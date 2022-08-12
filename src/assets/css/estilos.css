@@ -205,7 +205,6 @@ span:hover {
   display: flex;
   justify-content: center;
 }
-
 .box-icon .caja-ico {
   position: relative;
   border-radius: 10px;
@@ -221,7 +220,13 @@ span:hover {
   transition: 0.7s;
   z-index: 1;
 }
-
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .box-icon .caja-ico .icon {
+    width: 290px;
+    height: 100%;
+    z-index: 1;
+  }
+}
 .box-icon .caja-ico:nth-child(1) .icon {
   background: #e07768;
 }
@@ -260,7 +265,24 @@ span:hover {
   height: 200px;
   transition: 0.5s;
 }
-
+@media only screen and (min-width: 1025px) and (max-width: 1380px){
+  .box-icon .caja-ico .face {
+    width: 260px;
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .box-icon .caja-ico .face {
+    width: 290px;
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 768px){
+  .box-icon .caja-ico .face {
+    width: 100%;
+    height: 200px;
+  }
+}
 .box-icon .caja-ico .face.face1 {
   position: relative;
   background: #333;
