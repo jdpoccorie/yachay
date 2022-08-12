@@ -1,8 +1,9 @@
 .video-responsive {
   overflow:hidden;
-  padding-bottom:250px; /* Adecua este valor para controlar la altura del video */
+  padding-bottom:100px; /* Adecua este valor para controlar la altura del video */
   position:relative;
-  height:550px;
+  height:600px;
+  background-size: cover;
   background-color: transparent;
 }
 .video-responsive iframe{
@@ -11,11 +12,11 @@
   height:100%;
   width:auto;
   position:absolute;
+  border-radius:30px;
 }
-
 .ico{
   border-radius: 7px;
-  border: solid 2px #57BFB3;
+  border: solid 2px #88c0a8;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
@@ -532,7 +533,7 @@ p.testimonialFrom {
 }
 /* estilos para sección de tabs */
 .logo{
-  background-color: #57BFB3;
+  background-color: #88c0a8;
   border-radius: 5px;
   padding: 2px;
 }
