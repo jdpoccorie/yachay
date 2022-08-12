@@ -1,14 +1,18 @@
-/* .btn-lateral{
-    background-color: white;
+.video-responsive {
+  overflow:hidden;
+  padding-bottom:250px; /* Adecua este valor para controlar la altura del video */
+  position:relative;
+  height:550px;
+  background-color: transparent;
 }
-.btn-lateral :active{
-    background-color: white;
+.video-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:auto;
+  position:absolute;
 }
-.btn-lateral :hover{
-    background-color: white;
-    width: 100%;
-    border-radius: 15px 0px 0px 15px;
-} */
+
 .ico{
   border-radius: 7px;
   border: solid 2px #57BFB3;
