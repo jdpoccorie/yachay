@@ -78,11 +78,11 @@
   left: -80px;
   width: auto;
   animation: ufo 2s forwards;
-  height: 23%;
+  height: 15%;
 }
 #ufo2 {
   position: absolute;
-  top: 25%;
+  top: 77%;
   right: -80px;
   width: auto;
   animation: ufo2 2s forwards;
@@ -98,7 +98,7 @@
   position: absolute;
   margin-top: 55%;
   left: 0;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   font-family: subtitulo;
   color: #7fffd4;
@@ -244,10 +244,10 @@
 }
 @keyframes text-h {
   from {
-    left: -28%;
+    left: -25%;
   }
   to {
-    left: 28%;
+    left: 25%;
   }
 }
 @media (max-width: 480px) {
