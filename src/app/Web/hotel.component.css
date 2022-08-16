@@ -15,31 +15,34 @@
   transition: 0.5s ease;
 }
 .section--lake {
-  background-color: #57BFB3;
+  background-color: #57bfb3;
 }
 .section--smoke {
-  background-color: #E4DDB3;
+  background-color: #e4ddb3;
 }
 .section--red {
-  background-color: #DB4528;
+  background-color: #db4528;
 }
 .section--bone {
-  background-color: #E0DCE4;
+  background-color: #e0dce4;
 }
-.section--yellow{
-  background-color: #F8B935;
+.section--yellow {
+  background-color: #f8b935;
 }
-.section:hover, .section:active, .section:focus {
+.section:hover,
+.section:active,
+.section:focus {
   flex: 3;
 }
-.section:hover .title, .section:active .title, .section:focus .title {
+.section:hover .title,
+.section:active .title,
+.section:focus .title {
   transform: translate(-50%, -50%) rotate(0);
 }
-/* .section:hover .texto-1, .section:active .texto-1, .section:focus .texto-1 {
-  transform: translate(-50%, 90%) rotate(0);
-} */
 @media screen and (min-width: 1000px) {
-  .section:hover .title, .section:active .title, .section:focus .title {
+  .section:hover .title,
+  .section:active .title,
+  .section:focus .title {
     transform: translate(-50%, -50%) scale(1.25);
   }
 }
@@ -53,25 +56,208 @@
   transform: translate(-50%, -50%);
   transition: 0.5s ease;
 }
-/* .section .texto-1 {
-  font-family: "text";
-  font-size: 14px;
-  line-height: 90%;
-  left: 20%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -80%);
-  transition: 0.5s ease;
-} */
 @media screen and (min-width: 1000px) {
   .section .title {
     transform: translate(-50%, -50%) rotate(90deg);
   }
 }
-/* @media screen and (min-width: 1000px){
-  .section .texto-1 {
-    transform: translate(-30%, -70%) rotate(90deg);
+/* sección del titulo del header */
+#backG {
+  position: relative;
+  /* background: url("../../assets/image/fondos/hotel.jpg"); */
+  background: url("https://res.cloudinary.com/dylant25/image/upload/v1561062032/image_3.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  animation: animate 20s linear infinite;
+}
+#ufo {
+  position: absolute;
+  top: 25%;
+  left: -80px;
+  width: auto;
+  animation: ufo 2s forwards;
+  height: 23%;
+}
+#ufo2 {
+  position: absolute;
+  top: 25%;
+  right: -80px;
+  width: auto;
+  animation: ufo2 2s forwards;
+  height: 23%;
+}
+#txtBox p {
+  margin-top: 45%;
+  font-family: titulo;
+  font-weight: bold;
+  text-align: center;
+}
+#text-h{
+  position: absolute;
+  margin-top: 55%;
+  left: 0;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: subtitulo;
+  color: #7fffd4;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  animation: text-h 5s ease forwards;
+}
+#txtW {
+  position: absolute;
+  left: 0;
+  font-size: 50px;
+  color: #7fffd4;
+  animation: txtW 3s ease forwards;
+}
+#txtE0 {
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  font-size: 50px;
+  animation: txtE0 3s ease-in-out forwards;
+}
+#txtL {
+  position: absolute;
+  top: -50px;
+  left: 39%;
+  font-size: 50px;
+  color: #7fffd4;
+  animation: txtL 3s forwards;
+}
+#txtC {
+  position: absolute;
+  top: -50px;
+  left: 47%;
+  font-size: 50px;
+  animation: txtC 1.5s linear forwards;
+  animation-delay: 2s;
+}
+#txtO {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  font-size: 50px;
+  color: rgba(127, 255, 212, 0);
+  animation: txtO 3s ease-out forwards;
+}
+#txtM {
+  position: absolute;
+  top: 50px;
+  left: 63%;
+  font-size: 50px;
+  animation: txtM 3s forwards;
+}
+#txtE1 {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  font-size: 50px;
+  color: #7fffd4;
+  animation: txtE1 3s forwards;
+}
+@keyframes animate {
+  from {
+    background-position: 0 0;
   }
-} */
+  to {
+    background-position: 100% 0;
+  }
+}
+@keyframes ufo {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 50px;
+  }
+}
+@keyframes ufo2 {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 50px;
+  }
+}
 
+@keyframes txtW {
+  from {
+    left: -22%;
+  }
+  to {
+    left: 22%;
+  }
+}
+@keyframes txtE0 {
+  from {
+    top: 50px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes txtL {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes txtC {
+  0% {
+    top: -50px;
+  }
+  90% {
+    top: 40px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes txtO {
+  from {
+    color: rgba(127, 255, 212, 0);
+  }
+  to {
+    color: rgba(127, 255, 212, 1);
+  }
+}
+@keyframes txtM {
+  from {
+    top: 50px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes txtE1 {
+  from {
+    left: 150%;
+  }
+  to {
+    left: 69%;
+  }
+}
+@keyframes text-h {
+  from {
+    left: -28%;
+  }
+  to {
+    left: 28%;
+  }
+}
+@media (max-width: 480px) {
+  #txtW,
+  #txtE0,
+  #txtL,
+  #txtC,
+  #txtO,
+  #txtM,
+  #txtE1 {
+    font-size: 30px;
+  }
+}
