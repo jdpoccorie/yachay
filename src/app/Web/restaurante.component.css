@@ -3,35 +3,6 @@
   height: 10px;
   background-color: #2B7784;
 } */
-.carousel-f {
-  background: #e4ddb367;
-  border-radius: 15px;
-  padding: 5px 15px;
-}
-@media only screen and (min-width: 300px) and (max-width: 768px){
-  .carousel-f {
-    border-radius: 25px;
-    padding: 5px 25px;
-  }
-}
-.carousel-cell {
-  width: 50%;
-  height: 650px;
-  margin: 10px;
-  background: #8C8;
-  border-radius: 15px;
-  background-position: center center;
-  background-size: cover;
-}
-@media only screen and (min-width: 300px) and (max-width: 768px){
-  .carousel-cell {
-    width: 90%;
-    height: 650px;
-    margin: 10px;
-    background: #8C8;
-    border-radius: 25px;
-  }
-}
 .border-movil{
   border: solid #57BFB3 5px;
   border-radius: 20px;
