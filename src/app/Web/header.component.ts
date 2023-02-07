@@ -38,7 +38,15 @@ export class HeaderWebComponent implements OnInit {
     this.document.location.href = '/#/home';
     //window.location.reload();
   }
+  movePage(el: HTMLElement){
 
+    if (this.homePage){
+
+    }
+    else{
+        el.scrollIntoView();
+    }
+}
   // aboutus(){
   //     this.document.location.href = '/#/aboutus';
   //     //window.location.reload();

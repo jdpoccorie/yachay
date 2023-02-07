@@ -17,3 +17,33 @@
   border-radius: 20px;
   border: solid #57BFB3 3px;
 }
+.form-contact{
+  background-color: #57bfb37e;
+  border-radius: 0px;
+  font-size: 12px;
+  color: black;
+}
+.form-floating>.form-control, .form-floating>.form-select {
+  height: calc(2.5rem + 2px);
+  line-height: 1.25;
+}
+.label-contact{
+  font-size: 13px !important;
+  font-family: subtitulo;
+  font-weight: bold;
+  color: #db4528;
+}
+.btn-contact{
+  color: white;
+  background-color: #db4528;
+  font-weight: bold;
+  font-family: subtitulo;
+  font-size: 13px;
+}
+.bg-contact:hover{
+  color: white;
+  background-color: #db4528;
+  font-weight: bold;
+  font-family: subtitulo;
+  font-size: 13px;
+}

@@ -15,7 +15,7 @@
   <nav class="main-menu">
     <ul>
       <li><a class="subtitle" [routerLink]="['/home']"  routerLinkActive="active"><i class="fa fa-home"></i>Home</a></li>
-      <li><a class="subtitle" [routerLink]="['/comercio']" routerLinkActive="active"><i class="fas fa-store"></i>Comercio</a></li>
+      <li><a class="subtitle" [routerLink]="['/comercio']" (click)="movePage(end)" routerLinkActive="active"><i class="fas fa-store"></i>Comercio</a></li>
       <li><a class="subtitle" [routerLink]="['/hoteles']"  routerLinkActive="active"><i class="fas fa-hotel"></i>Hotel</a></li>
       <!-- <li>
         <a href="#"><i class="fa fa-male"></i>Account</a>
@@ -26,7 +26,7 @@
         </ul>
       </li> -->
       <li><a class="subtitle" [routerLink]="['/restaurante']"  routerLinkActive="active"><i class="fas fa-utensils"></i>Restaurante</a></li>
-      <li><a class="subtitle" [routerLink]="['/contacto']"  routerLinkActive="active"><i class="far fa-envelope"></i>Contacto</a></li>
+      <li><a class="subtitle" [routerLink]="['/contacto']"  routerLinkActive="active"><i class="far fa-envelope" (click)="movePage(end)"></i>Contacto</a></li>
     </ul>
   </nav>
   <div class="user-info">
@@ -61,3 +61,4 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<div #end></div>
