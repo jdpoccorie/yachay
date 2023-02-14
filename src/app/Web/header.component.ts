@@ -20,6 +20,8 @@ export class HeaderWebComponent implements OnInit {
   @Input() hotel: boolean;
   @Input() inicio: boolean;
   @Input() restaurante: boolean;
+  @Input() homePage:boolean;
+
 
   @Output() dataEvent = new EventEmitter();
   constructor(
