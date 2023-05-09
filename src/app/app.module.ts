@@ -84,12 +84,13 @@ import { HotelWebComponent } from './Web/hotel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { SistemaWebComponent } from './Web/sistema.component';
+import { FormContactComponent } from './Web/form-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderPagesComponent, HeaderComponent, HabitacionesComponent, TotalSeleccionHabPipe, TotalHabitacionesPipe, TotalHuepedesHabPipe, MonedaFormatoPipe, CheckOutComponent,
     ProcessDialogComponent, DetalleOrdenComponent, DisponibilidadDialogComponent, FooterWebComponent, HeaderWebComponent, HomeWebComponent, NosotrosWebComponent, SistemaWebComponent,
-    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent, AgenciaWebComponent, MovilWebComponent,
+    ContactoWebComponent, GaleriaWebComponent, ComercioWebComponent, HotelWebComponent, RestauranteWebComponent, AgenciaWebComponent, MovilWebComponent, FormContactComponent,
   ],
   imports: [
     BrowserModule,

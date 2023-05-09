@@ -1,18 +1,18 @@
 <header-web (dataEvent)='setLanguage($event)' [Comercio]='true'></header-web>
-<section class="container-fluid my-5 px-0">
+<section class="container-fluid my-md-5 my-1 px-0">
   <div class="row mx-0">
     <div class="col-md-8 offset-md-2 col-12">
       <div class="container text-center">
         <h2 class="title text-lago d-none d-md-block">GALILEO-ERP EN TU NEGOCIO</h2>
         <h2 class="title fw-bold text-lago d-md-none d-block fs-2">GALILEO-ERP EN TU NEGOCIO</h2>
-        <div class="px-5">
+        <div class="px-md-5 px-1">
           <p class="lh-sm text fw-bold text-md-center text-justify">Simple e intuitivo, Galileo-ERP es un sistema que te
             ayuda a gestionar tu
             empresa y generar ventas con facturación electrónica, control de inventario y mucho más.</p>
           <p class="text lh-sm text-justify">La empresa Yachay, propone el software más completo de gestión empresarial
             y facturación electrónica integrado en la nube con el mismo poder que las aplicaciones tradicionales, pero a
             solo una fracción de costo y complejidad.</p>
-          <a class="btn btn-danger btn-lg subtitle my-2" href="#" role="button"> Solicitar mas información </a>
+          <a class="btn btn-danger btn-lg subtitle my-2" [routerLink]="['/contacto']"  role="button"> Solicitar mas información </a>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <div class="w-100 px-5 pb-5 mt-3">
     <h4 class="subtitle text-center text-lago fw-bold mb-3">Galileo-ERP es un sistema que se adapta a tu negocio, puedes
       usarlo en:</h4>
-    <div class="row px-5">
+    <div class="row px-md-5 px-0">
       <div class="col-lg-3 col-md-4 col-sm-6 col-12 text-center">
         <img src="../../assets/image/servicios/erp-1.png" class="img-fluid" alt="">
         <h3 class="fw-bold title text-lago">Tiendas</h3>
@@ -68,8 +68,9 @@
               <img src="../../assets/image/recursos/ico-1.png" class="card-img" alt="...">
             </div>
             <div class="col-md-9 col-8">
-              <div class="card-body text-start">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Reportes Inteligentes</u></h5>
+              <div class="card-body text-md-start text-center">
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Reportes Inteligentes</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Reportes Inteligentes</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Información relevante en
                   tiempo real para analizar tu
                   negocio. Personaliza tus reportes según tus necesidades</p>
@@ -85,8 +86,9 @@
               <img src="../../assets/image/recursos/ico-2.png" class="card-img" alt="...">
             </div>
             <div class="col-md-9 col-8">
-              <div class="card-body text-start">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Inventarios</u></h5>
+              <div class="card-body text-md-start text-center">
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Inventarios</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Inventarios</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Consulta el estado de tu
                   inventario en tiempo real y desde cualquier momento</p>
               </div>
@@ -101,8 +103,9 @@
               <img src="../../assets/image/recursos/ico-3.png" class="card-img" alt="...">
             </div>
             <div class="col-md-9 col-8">
-              <div class="card-body text-start">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Clientes y Proveedores</u></h5>
+              <div class="card-body text-md-start text-center">
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Clientes y Proveedores</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Clientes y Proveedores</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Lleva el registro de
                   todos tus clientes, el histórico de
                   ventas, deudas, los saldos y todos sus movimientos.</p>
@@ -118,8 +121,10 @@
               <img src="../../assets/image/recursos/ico-4.png" class="card-img" alt="...">
             </div>
             <div class="col-md-9 col-8">
-              <div class="card-body text-start">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Facturación Electrónica</u></h5>
+              <div class="card-body text-md-start text-center">
+                <!-- <h5 class="card-title fw-bold subtitle text-lago"><u>Facturación Electrónica</u></h5> -->
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Facturación Electrónica</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Facturación Electrónica</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Declara tus comprobantes
                   inmediatamente y no tengas
                   problemas con SUNAT</p>
@@ -135,8 +140,9 @@
               <img src="../../assets/image/recursos/ico-5.png" class="card-img" alt="...">
             </div>
             <div class="col-md-9 col-8">
-              <div class="card-body text-start">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Ventas, Ingresos y Gastos</u></h5>
+              <div class="card-body text-md-start text-center">
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Ventas, Ingresos y Gastos</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Ventas, Ingresos y Gastos</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Lleva el control de tu
                   flujo de dinero, registra tus ventas,
                   ingresos y gastos.</p>
@@ -151,9 +157,10 @@
             <div class="col-md-3 col-4">
               <img src="../../assets/image/recursos/ico-6.png" class="card-img" alt="...">
             </div>
-            <div class="col-md-9 col-8 text-start">
+            <div class="col-md-9 col-8 text-md-start text-center">
               <div class="card-body">
-                <h5 class="card-title fw-bold subtitle text-lago"><u>Acceso Móvil</u></h5>
+                <h5 class="card-title fw-bold subtitle text-lago d-md-block d-none"><u>Acceso Móvil</u></h5>
+                <p class="card-title fw-bold subtitle text-lago d-md-none d-block"><u>Acceso Móvil</u></p>
                 <p class="card-text fw-bold text-md-left text color-1 text lh-sm text-justify">Acceda por la pagina web
                   o descargue el App desde cualquier
                   lugar</p>
@@ -167,7 +174,7 @@
   <div class="col-12 my-5">
     <div class="row d-flex align-items-center">
       <div class="col-lg-7 col-md-6 col-12">
-        <div class="container p-5">
+        <div class="container p-md-5 p-1">
           <h3 class="text-lago text-center title fw-bold">SISTEMA MOVIL PARA COMERCIOS</h3>
           <p class="subtitle fw-bold text-rojo">Con el sistema móvil generar boletas, tomar pedidos, administrar el
             inventario entre otras operaciones dentro de su negocio sera mas sencillo y fácil de usar, desde un celular

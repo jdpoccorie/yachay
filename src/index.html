@@ -46,9 +46,11 @@
         var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
         if (window.scrollY > 650 && width > 768) {
-          document.getElementById('Menu').classList.add('fixed-top', 'py-0', 'bg-dark');
+          document.getElementById('Menu').classList.add('fixed-top', 'bg-dark');
           // document.getElementById('sidebar').classList.add('top-lateral');
-          // document.getElementById('bg').classList.remove('bg-header');
+          document.getElementById('Menu-2').classList.remove('d-none');
+          document.getElementById('Menu-2').classList.add('d-block');
+          // document.getElementById('Menu-2').classList.add('d-block');
           // document.getElementById('logo-1').classList.add('d-none');
           // document.getElementById('logo-2').classList.remove('d-none');
           // document.getElementById('menu-1').classList.add('negro');
@@ -57,11 +59,11 @@
           // document.getElementById('menu-4').classList.add('negro');
           // document.getElementById('texto-1').classList.add('negro');
           // document.getElementById('idioma').classList.remove('text-white');
-
+          console.log("menu desplegable");
         } else {
-          document.getElementById('Menu').classList.remove('fixed-top', 'py-0', 'bg-dark');
+          document.getElementById('Menu').classList.remove('fixed-top', 'bg-dark');
+          document.getElementById('Menu-2').classList.add('d-none');
           // document.getElementById('sidebar').classList.remove('top-lateral');
-          // document.getElementById('bg').classList.add('bg-header');
           // document.getElementById('menu-1').classList.remove('negro');
           // document.getElementById('menu-2').classList.remove('negro');
           // document.getElementById('menu-3').classList.remove('negro');

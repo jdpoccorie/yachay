@@ -1,12 +1,9 @@
+
+
 .border-1{
     border-bottom-color:#F3AC63;
     border-bottom-width:3px;
     border-bottom-style: solid;
-}
-.fixed-top {
-  position: fixed;
-  top: 0;
-  /* background-color: rgba(255, 255, 255, 0.871); */
 }
 .bg-header{
   background-color: rgba(0, 0, 0, 0.455);
@@ -79,6 +76,14 @@ a.active:after {
   background-color: #AD3335 !important;
 }
 
+/* ! menu responsive */
+.menu-2 li a{
+  font-family: texto;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px !important;
+}
 /*
  * Header
  */
@@ -163,6 +168,7 @@ a.active:after {
   .main-header .logo {
     width: auto;
   }
+  
   .main-header .logo a {
     /* font-size: 36px; */
     padding: 10px 5px 10px 5px;
@@ -425,4 +431,44 @@ a.active:after {
 }
 .main-header .user-info ul li a:hover, .main-header .user-info ul li a:hover i {
   color: #DB4528;
+}
+
+
+
+.consulta-comprobantes {
+  position: absolute;
+  width: 130px;
+  height: 60px;
+  border-radius: 0 20px 20px 0;
+  padding: 5px 10px;
+  text-align: right;
+  display: block;
+  background-color: red;
+  top: 40vh;
+  left: 0;
+  z-index: 100;
+  color: white;
+
+  background-color: #2b77848c;
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.consulta-comprobantes a {
+  color: white;
+  text-decoration: none;
+}
+
+.consulta-comprobantes a:hover {
+  background-color: transparent;
+
+}
+
+.consulta-comprobantes a::after {
+  display: none;
+}
+
+.consulta-comprobantes a:hover::after {
+  display: none;
 }

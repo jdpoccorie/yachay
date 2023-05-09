@@ -1,5 +1,10 @@
 <header class="main-header">
-  <div class="logo"><a href="#"><img src="../../assets/image/recursos/Yachay.png" class="img-fluid" alt=""></a></div>
+  <div class="logo menu-2">
+    <a href="#" class="first">
+      <img src="../../assets/image/recursos/Yachay.png" class="img-fluid" alt="">
+    </a>
+  </div>
+  
   <div class="main-search d-none">
     <div class="search-button">
       <button class="subtitle" type="button"><i class="fa fa-search"></i>Search</button>
@@ -9,14 +14,18 @@
       <button type="submit"><i class="fa fa-search"></i></button>
     </div>
   </div>
+
   <div class="actions">
     <button type="button" class="menu-toggle"><i class="fa fa-navicon"></i>menu</button>
   </div>
-  <nav class="main-menu">
+
+  <nav id="Menu" class="main-menu">
     <ul>
-      <li><a class="subtitle" [routerLink]="['/home']"  routerLinkActive="active"><i class="fa fa-home"></i>Home</a></li>
-      <li><a class="subtitle" [routerLink]="['/comercio']" (click)="movePage(end)" routerLinkActive="active"><i class="fas fa-store"></i>Comercio</a></li>
-      <li><a class="subtitle" [routerLink]="['/hoteles']"  routerLinkActive="active"><i class="fas fa-hotel"></i>Hotel</a></li>
+      <li><a class="subtitle" [routerLink]="['/home']" routerLinkActive="active"><i class="fa fa-home"></i>Home</a></li>
+      <li><a class="subtitle" [routerLink]="['/comercio']" (click)="movePage(end)" routerLinkActive="active"><i
+            class="fas fa-store"></i>Comercio</a></li>
+      <li><a class="subtitle" [routerLink]="['/hoteles']" routerLinkActive="active"><i
+            class="fas fa-hotel"></i>Hotel</a></li>
       <!-- <li>
         <a href="#"><i class="fa fa-male"></i>Account</a>
         <ul class="sub-menu">
@@ -25,17 +34,76 @@
           <li><a href="#">¿Perdió su contraseña?</a></li>
         </ul>
       </li> -->
-      <li><a class="subtitle" [routerLink]="['/restaurante']"  routerLinkActive="active"><i class="fas fa-utensils"></i>Restaurante</a></li>
-      <li><a class="subtitle" [routerLink]="['/contacto']"  routerLinkActive="active"><i class="far fa-envelope" (click)="movePage(end)"></i>Contacto</a></li>
+      <li><a class="subtitle" [routerLink]="['/restaurante']" routerLinkActive="active"><i
+            class="fas fa-utensils"></i>Restaurante</a></li>
+      <li><a class="subtitle" [routerLink]="['/contacto']" routerLinkActive="active"><i class="far fa-envelope"
+            (click)="movePage(end)"></i>Contacto</a></li>
     </ul>
   </nav>
+  <nav class="navbar navbar-expand-lg d-none fixed-top" id="Menu-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/image/recursos/Yachay-1.png" class="img-fluid" alt="">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+        </ul>
+        <div class="p-2">
+          <ul class="navbar-nav me-auto my-0 menu-2 bg-lago px-3 py-1">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-store"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-hotel"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav id="Menu-2"  class="navbar navbar-expand-lg d-none fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/image/recursos/Yachay-1.png" class="img-fluid" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-0 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> -->
   <div class="user-info">
     <ul>
       <li><a class="subtitle" href="#"><i class="fas fa-eye"></i>Galileo ERP</a></li>
-      <li><a class="subtitle" [routerLink]="['/contacto']" (click)="movePage(end)"><i class="fa fa-shopping-cart"></i>Obtenerlo ya!</a></li>
+      <li><a class="subtitle" [routerLink]="['/contacto']" (click)="movePage(end)"><i
+            class="fa fa-shopping-cart"></i>Obtenerlo ya!</a></li>
     </ul>
   </div>
+
+  <div class="consulta-comprobantes">
+    <a href="#">Consulta Comprobantes</a>
+  </div>
 </header>
+
 <div *ngIf="!hotel && !restaurante && !Comercio" id="carouselExampleControls" class="carousel slide margen-h"
   data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -61,8 +129,8 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div *ngIf="Comercio" id="carouselExampleControls" class="carousel slide margen-h px-0"
-  data-bs-ride="carousel">
+
+<div *ngIf="Comercio" id="carouselExampleControls" class="carousel slide margen-h px-0" data-bs-ride="carousel">
   <div class="carousel-inner px-0">
     <div ng class="carousel-item active">
       <img src="../../assets/image/carrousel/comercio.png" class="d-none d-md-block w-100 img-fluid" alt="...">
@@ -86,4 +154,5 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
 <div #end></div>
