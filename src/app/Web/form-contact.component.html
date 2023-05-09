@@ -1,25 +1,85 @@
+
+
 <div class="card mt-2 border-contact">
   <div class="card-body text-center border-0">
     <h5 class="title text-lago">YACHAY ACPRODEC</h5>
     <p class="subtitle fw-bold text-rojo lh-sm mb-0">¡Estamos felices de poder ayudar, a su negocio!</p>
-    <div class="container pb-0 pt-1 px-1 px-0">
-      <div class="form-floating">
-        <input type="name" class="form-control form-contact" id="floatingInput" placeholder="name@example.com">
-        <label class="label-contact" for="floatingInput">Nombre</label>
-      </div>
-      <div class="form-floating mt-2">
-        <input type="phone" class="form-control form-contact" id="floatingPassword" placeholder="Password">
-        <label class="label-contact" for="floatingPassword">Teléfono</label>
-      </div>
-      <div class="form-floating mt-2">
-        <input type="email" class="form-control form-contact" id="floatingInput" placeholder="name@example.com">
-        <label class="label-contact" for="floatingInput">Correo electrónico</label>
-      </div>
-      <div class="form-floating mt-2 mb-1">
-        <textarea class="form-control form-contact" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label class="label-contact" for="floatingTextarea2">Comments</label>
-      </div>
-    </div>
+    <form class="widget-contact-form" novalidate role="form" [formGroup]="datos" (submit)="enviarCorreo()">
+        <div class="form-group">
+            <div class="form-floating">
+                <input type="name" class="form-control form-contact" id="floatingInput" placeholder="name@example.com" formControlName="NombreEmisor" [class.is-invalid]="NombreEmisorNoValido">
+                <span class="mi-span" *ngIf="NombreEmisorNoValido" class="text-danger">
+                    (El nombre no puede quedar vacío)*
+                </span>
+                <label class="label-contact" for="floatingInput">Nombre</label>
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-floating mt-2">
+                <input type="email" class="form-control form-contact" id="floatingInput" placeholder="name@example.com" formControlName="CorreoEmisor" 
+                [class.is-invalid]="CorreoEmisorNoValido">
+                <span *ngIf="CorreoEmisorNoValido" class="text-danger">
+                    (Ingrese un correo válido)*
+                </span>
+                <label class="label-contact" for="floatingInput">Correo electrónico</label>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-floating mt-2">
+                <input type="asunto" class="form-control form-contact" id="floatingPassword" placeholder="Password" formControlName="OtrosDatos"
+                [class.is-invalid]="OtrosDatosNoValido">
+                <span *ngIf="OtrosDatosNoValido" class="text-danger">
+                    (El asunto no puede quedar vacío)*
+                </span>
+                <label class="label-contact" for="floatingPassword">Asunto</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-floating mt-2">
+                <textarea class="form-control form-contact" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"
+                formControlName="CuerpoMensaje"
+            [class.is-invalid]="CuerpoMensajeNoValido"></textarea>
+                <span *ngIf="CuerpoMensajeNoValido" class="text-danger">
+                    (El nombre no puede quedar vacío)
+                </span>
+                <label class="label-contact" for="floatingTextarea2">Comments</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xl-3 col-lg-4 col-md-5">
+                <label for="message">Captcha</label>
+                <div class="d-flex">
+                    <button class="btn-refresh" (click)="this.refreshCaptcha()"><i class="fa fa-refresh fa-2xl" aria-hidden="true"></i></button>
+                    <div class="form-group d-block">
+                        <div style="width: 100%;" *ngIf="showLoadingSpinner == true">
+                            <mat-spinner mode="indeterminate" *ngIf="showLoadingSpinner == true" [diameter]="40"></mat-spinner>
+                        </div>
+
+
+                        <div style="width: 100%;" *ngIf="showLoadingSpinner == false">
+                            <img [src]="(this.hotel == 'Hotel Mapi')? capcha64:capcha64Cusco" class="bmd-img" />
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="form-group col-xl-9 col-lg-8 col-md-7">
+                <label for="message" class="d-none d-sm-none d-md-block">Ingrese Captcha</label>
+                <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Captcha..." formControlName="CodigoCaptcha"
+                [class.is-invalid]="CodigoCaptchaNoValido"
+                >
+                <span *ngIf="CodigoCaptchaNoValido" class="text-danger">
+                    (El Código Captcha no puede quedar vacío)
+                </span>
+                
+            </div>
+        </div>
+    </form>
+    
     <div class="d-flex align-items-end flex-column mt-0">
       <div class="my-0">
         <a href="#" class="btn-contact py-1 px-4">Enviar</a>
