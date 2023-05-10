@@ -49,5 +49,18 @@
   }
 
 span.mi-span:hover {
-    font-size: 1rem !important;
+    font-size: 8px !important;
+    font-weight: bold;
+}
+span.mi-span {
+    font-size: 8px !important;
+    font-weight: bold;
+}
+
+.btn-contact {
+    border: none;
+}
+
+.btn-close {
+    
 }

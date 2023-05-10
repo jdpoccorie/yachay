@@ -7,8 +7,8 @@
     <form class="widget-contact-form" novalidate role="form" [formGroup]="datos" (submit)="enviarCorreo()">
         <div class="form-group">
             <div class="form-floating">
-                <input type="name" class="form-control form-contact" id="floatingInput" placeholder="name@example.com" formControlName="NombreEmisor" [class.is-invalid]="NombreEmisorNoValido">
-                <span class="mi-span" *ngIf="NombreEmisorNoValido" class="text-danger">
+                <input type="name" class="form-control form-contact" id="floatingInput" placeholder="name" formControlName="NombreEmisor" [class.is-invalid]="NombreEmisorNoValido">
+                <span class="mi-span" *ngIf="NombreEmisorNoValido" class="text-danger" style="font-weight: bold; font-size: 12px;">
                     (El nombre no puede quedar vacío)*
                 </span>
                 <label class="label-contact" for="floatingInput">Nombre</label>
@@ -19,7 +19,7 @@
             <div class="form-floating mt-2">
                 <input type="email" class="form-control form-contact" id="floatingInput" placeholder="name@example.com" formControlName="CorreoEmisor" 
                 [class.is-invalid]="CorreoEmisorNoValido">
-                <span *ngIf="CorreoEmisorNoValido" class="text-danger">
+                <span class="mi-span" *ngIf="CorreoEmisorNoValido" class="text-danger" style="font-weight: bold; font-size: 12px;">
                     (Ingrese un correo válido)*
                 </span>
                 <label class="label-contact" for="floatingInput">Correo electrónico</label>
@@ -30,7 +30,7 @@
             <div class="form-floating mt-2">
                 <input type="asunto" class="form-control form-contact" id="floatingPassword" placeholder="Password" formControlName="OtrosDatos"
                 [class.is-invalid]="OtrosDatosNoValido">
-                <span *ngIf="OtrosDatosNoValido" class="text-danger">
+                <span class="mi-span" *ngIf="OtrosDatosNoValido" class="text-danger" style="font-weight: bold; font-size: 12px;">
                     (El asunto no puede quedar vacío)*
                 </span>
                 <label class="label-contact" for="floatingPassword">Asunto</label>
@@ -41,15 +41,14 @@
                 <textarea class="form-control form-contact" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"
                 formControlName="CuerpoMensaje"
             [class.is-invalid]="CuerpoMensajeNoValido"></textarea>
-                <span *ngIf="CuerpoMensajeNoValido" class="text-danger">
+                <span class="mi-span" *ngIf="CuerpoMensajeNoValido" class="text-danger" style="font-weight: bold; font-size: 12px;">
                     (El nombre no puede quedar vacío)
                 </span>
                 <label class="label-contact" for="floatingTextarea2">Comments</label>
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-xl-3 col-lg-4 col-md-5">
-                <label for="message">Captcha</label>
+            <div class="form-group col-xl-6 col-lg-12 col-md-12 mt-2">
                 <div class="d-flex">
                     <button class="btn-refresh" (click)="this.refreshCaptcha()"><i class="fa fa-refresh fa-2xl" aria-hidden="true"></i></button>
                     <div class="form-group d-block">
@@ -59,7 +58,7 @@
 
 
                         <div style="width: 100%;" *ngIf="showLoadingSpinner == false">
-                            <img [src]="(this.hotel == 'Hotel Mapi')? capcha64:capcha64Cusco" class="bmd-img" />
+                            <img [src]="this.capcha64" class="bmd-img" />
                         </div>
                     </div>
                     
@@ -67,23 +66,34 @@
                 </div>
             </div>
             
-            <div class="form-group col-xl-9 col-lg-8 col-md-7">
-                <label for="message" class="d-none d-sm-none d-md-block">Ingrese Captcha</label>
-                <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Captcha..." formControlName="CodigoCaptcha"
-                [class.is-invalid]="CodigoCaptchaNoValido"
-                >
-                <span *ngIf="CodigoCaptchaNoValido" class="text-danger">
-                    (El Código Captcha no puede quedar vacío)
-                </span>
-                
+            <div class="form-group col-xl-6 col-lg-12 col-md-12 mt-2">
+                <div class="form-floating">
+                    <input type="asunto" class="form-control form-contact" id="floatingPassword" placeholder="Password" formControlName="CodigoCaptcha"
+                    [class.is-invalid]="CodigoCaptchaNoValido">
+                    <span class="mi-span" style="font-weight: bold; font-size: 12px;" *ngIf="CodigoCaptchaNoValido" class="text-danger">
+                    (Error Captcha)
+                    </span>
+                    <label class="label-contact" for="floatingPassword">Captcha</label>
+                </div>
             </div>
         </div>
+        <div *ngIf="EnvioSuccess" class="alert alert-success fade show d-flex align-items-center justify-content-between p-2 mt-2" role="alert" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation=" "data-mdb-animation="fade-out">
+            <strong>Envío de correo exitoso!</strong>
+            <button type="button" class="close btn-close" data-dismiss="alert" aria-label="Close" (click)="this.EnvioSuccess=false">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div *ngIf="EnvioFailed" class="alert alert-danger fade show d-flex align-items-center justify-content-between p-2 mt-2" role="alert" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="fade-out">
+            <strong>Error en el Código Captcha</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="this.EnvioFailed=false">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="form-group mt-2">
+            <button class="btn-contact py-1 px-4" type="submit" id="form-submit">
+                <i class="fa fa-paper-plane"></i> &nbsp;{{ 'home.form_enviar' | translate }}
+            </button>
+        </div>
     </form>
-    
-    <div class="d-flex align-items-end flex-column mt-0">
-      <div class="my-0">
-        <a href="#" class="btn-contact py-1 px-4">Enviar</a>
-      </div>
-    </div>
   </div>
 </div>

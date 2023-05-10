@@ -14,7 +14,6 @@ export class FormContactComponent implements OnInit {
   @Input () hotel: string;
 
   capcha64: SafeResourceUrl;
-  capcha64Cusco: SafeResourceUrl;
   public showLoadingSpinner: boolean = false;
   public EnvioSuccess: boolean = false;
   public EnvioFailed: boolean = false;
@@ -95,7 +94,10 @@ export class FormContactComponent implements OnInit {
     this.showLoadingSpinner = true;
     this.genCaptcha.obtenerCaptcha().subscribe(
     data => {
-      this.capcha64 = this.domSanitizer.bypassSecurityTrustResourceUrl("data:image/bmd;base64, " + data );
+      
+      this.capcha64 = this.domSanitizer.bypassSecurityTrustResourceUrl("data:image/bmd;base64, " + data);
+
+      console.log(this.capcha64)
     },
     error => {
       this.showErrorConexionMessage();
